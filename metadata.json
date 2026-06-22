@@ -1,0 +1,6 @@
+{
+  "name": "Liam Victoria Falls",
+  "description": "Premium 5-star luxury boutique bed and breakfast in Victoria Falls, Zimbabwe. Plan your custom stay with our concierge planner, explore accommodations, and manage reservations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

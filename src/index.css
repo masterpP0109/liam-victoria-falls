@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:wght@100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Google Sans Flex", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Playfair Display", "Elms Sans", "Georgia", serif;
+  --font-mono: "Bento Sans", "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Premium Minimalist Black & White Palette with Purple Accent */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F8F7F9;
+  --color-text-primary: #111111;
+  --color-text-secondary: #5F5E6B;
+  --color-border-light: #E5E5E7;
+  --color-accent-action: #4C248C; /* Regal Muted Purple */
+  
+  --color-stone-950: #FFFFFF;
+  --color-stone-900: #F8F7F9;
+  --color-stone-850: #E5E5E7;
+  --color-stone-800: #5F5E6B;
+}
+
+/* Global calm and professional typography overrides */
+body {
+  font-family: "Plus Jakarta Sans", "Google Sans Flex", sans-serif;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  background-color: #FFFFFF;
+  color: #111111;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: "Playfair Display", "Elms Sans", "Georgia", serif;
+}
+
+.font-mono {
+  font-family: "Bento Sans", "JetBrains Mono", monospace;
+  letter-spacing: 0.1em;
+}
+
+/* Custom premium transitions & zoom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom gorgeous thin scrollbar style */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #F8F7F9;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4C248C;
+  border-radius: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FFFFFF;
+  color: #111111;
+}
+
+/* Base custom classes to support full responsive premium spacing */
+.reveal-text-container {
+  overflow: hidden;
+  display: block;
+}
+
+.premium-marquee-logo {
+  filter: grayscale(100%) contrast(150%);
+  opacity: 0.4;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.premium-marquee-logo:hover {
+  filter: grayscale(0%) contrast(100%);
+  opacity: 0.9;
+}
+
+
