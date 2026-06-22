@@ -73,12 +73,12 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
         
         {/* Module Header in HERITAGE style */}
         <div className="max-w-3xl mb-24 text-left">
-          <div className="inline-flex items-center space-x-1.5 text-[#4C248C] font-mono text-[9px] tracking-[0.25em] uppercase mb-4 font-bold">
-            <Sparkles className="h-3.5 w-3.5 text-[#6D4EB3]" />
+          <div className="inline-flex items-center space-x-1.5 text-[#00C853] font-mono text-[9px] tracking-[0.25em] uppercase mb-4 font-bold">
+            <Sparkles className="h-3.5 w-3.5 text-[#00C853]" />
             <span>EXQUISITE STUDIO SPECIFICATIONS</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-black tracking-tight leading-none">
-            The Eight Studio <span className="text-[#4C248C] italic">Residences</span>.
+            The Eight Studio <span className="text-[#00C853] italic">Residences</span>.
           </h2>
           <p className="mt-5 text-[#5F5E6B] font-sans text-sm sm:text-base leading-relaxed max-w-2xl font-light">
             Each sanctuary is individually crafted with local teak and rosewood hardwoods, fully integrated dual-zone whisper climate portals, cast-concrete ensuite wetrooms, and deep-set private decks looking out to the forest canopy.
@@ -93,10 +93,10 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
             return (
               <article
                 key={studio.id}
-                className={`studio-animate-card bg-white rounded-[28px] overflow-hidden border border-[#E5E5E7] group transition-all duration-500 hover:scale-[1.01] hover:shadow-xl hover:border-[#4C248C]/40 flex flex-col h-full ${bentoSpan}`}
+                className={`studio-animate-card bg-white rounded-[28px] overflow-hidden border border-[#E5E5E7] group transition-all duration-500 hover:scale-[1.01] hover:shadow-xl hover:border-[#00C853]/40 flex flex-col h-full ${bentoSpan}`}
               >
                 {/* Image Container */}
-                <div className="relative h-72 overflow-hidden bg-[#F8F7F9]">
+                <div className="relative h-72 overflow-hidden bg-[#F5F5F5]">
                   <img
                     src={studio.images[0]}
                     alt={studio.name}
@@ -104,19 +104,19 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
                   />
                   
                   {/* Price Tag Overlay */}
-                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md border border-[#E5E5E7] px-4 py-1.5 rounded-full shadow-sm font-mono text-xs font-bold text-[#4C248C]">
+                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md border border-[#E5E5E7] px-4 py-1.5 rounded-full shadow-sm font-mono text-xs font-bold text-[#00C853]">
                     ${studio.basePriceNightUSD} <span className="text-[#5F5E6B] font-normal text-[9px]">/ night</span>
                   </div>
 
                   {/* Capacity Overlays */}
                   <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full text-[9px] font-mono text-black flex items-center space-x-2.5 border border-[#E5E5E7]">
                     <span className="flex items-center space-x-1">
-                      <Users className="h-3.5 w-3.5 text-[#4C248C]" />
+                      <Users className="h-3.5 w-3.5 text-[#00C853]" />
                       <span>{studio.capacity.adults} Guests</span>
                     </span>
                     <span className="text-[#E5E5E7]">|</span>
                     <span className="flex items-center space-x-1">
-                      <Bed className="h-3.5 w-3.5 text-[#4C248C]" />
+                      <Bed className="h-3.5 w-3.5 text-[#00C853]" />
                       <span>{studio.capacity.children > 0 ? "Extended Suite" : "King Setup"}</span>
                     </span>
                   </div>
@@ -126,10 +126,10 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
                 <div className="p-8 flex-1 flex flex-col justify-between text-left">
                   <div className="space-y-4">
                     <header className="space-y-2">
-                      <h3 className="font-serif font-black text-xl text-[#111111] group-hover:text-[#4C248C] group-hover:underline decoration-1 underline-offset-4 transition-all">
+                      <h3 className="font-serif font-black text-xl text-[#111111] group-hover:text-[#00C853] group-hover:underline decoration-1 underline-offset-4 transition-all">
                         {studio.name}
                       </h3>
-                      <p className="text-[10px] font-mono text-[#4C248C] uppercase tracking-widest font-semibold">{studio.tagline}</p>
+                      <p className="text-[10px] font-mono text-[#00C853] uppercase tracking-widest font-semibold">{studio.tagline}</p>
                     </header>
                     
                     <p className="text-xs text-[#5F5E6B] font-sans leading-relaxed line-clamp-3 font-light">
@@ -140,7 +140,7 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
                     <div className="py-4 border-t border-b border-[#E5E5E7]/80 grid grid-cols-1 gap-2.5 text-[9.5px] font-mono text-[#5F5E6B] uppercase tracking-widest">
                       {studio.highlights.map((hlt, i) => (
                         <div key={i} className="flex items-center space-x-2">
-                           <span className="h-1.5 w-1.5 bg-[#6D4EB3] rounded-full shrink-0"></span>
+                           <span className="h-1.5 w-1.5 bg-[#00C853] rounded-full shrink-0"></span>
                           <span>{hlt}</span>
                         </div>
                       ))}
@@ -148,18 +148,18 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
                   </div>
 
                   {/* Card Action Row */}
-                  <div className="mt-8 flex items-center justify-between space-x-4 pt-4 border-t border-[#F8F7F9]">
+                  <div className="mt-8 flex items-center justify-between space-x-4 pt-4 border-t border-[#F5F5F5]">
                     <button
                       onClick={() => setSelectedRoom(studio)}
-                      className="px-5 py-2.5 rounded-full bg-white border border-[#E5E5E7] hover:border-[#4C248C] text-[#4C248C] hover:bg-[#FAF9FD] transition-all text-[9.5px] font-mono tracking-widest flex items-center space-x-1.5 cursor-pointer shrink-0 font-bold"
+                      className="px-5 py-2.5 rounded-full bg-white border border-[#E5E5E7] hover:border-[#00C853]/50 text-black hover:text-[#00C853] hover:bg-[#F5F5F5] transition-all text-[9.5px] font-mono tracking-widest flex items-center space-x-1.5 cursor-pointer shrink-0 font-bold"
                     >
-                      <Eye className="h-3.5 w-3.5 text-[#6D4EB3]" />
+                      <Eye className="h-3.5 w-3.5 text-[#00C853]" />
                       <span>SPECS</span>
                     </button>
 
                     <button
                       onClick={() => handleBookSelect(studio.id)}
-                      className="flex-1 py-2.5 bg-[#4C248C] hover:bg-[#3B1C6E] text-white font-mono text-[9.5px] tracking-widest font-bold rounded-full transition-all active:scale-95 flex items-center justify-center space-x-1.5 shadow-sm"
+                      className="flex-1 py-2.5 bg-[#00C853] hover:bg-[#00C853]/90 text-white font-mono text-[9.5px] tracking-widest font-bold rounded-full transition-all active:scale-95 flex items-center justify-center space-x-1.5 shadow-sm cursor-pointer"
                     >
                       <span>PLAN STAY</span>
                       <ArrowRight className="h-3.5 w-3.5 text-white" />
@@ -176,7 +176,7 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in">
             <div className="bg-white border border-[#E5E5E7] rounded-[32px] max-w-2xl w-full overflow-hidden shadow-2xl">
               {/* Modal header */}
-              <div className="relative h-64 bg-[#F8F7F9]">
+              <div className="relative h-64 bg-[#F5F5F5]">
                 <img
                   src={selectedRoom.images[0]}
                   alt={selectedRoom.name}
@@ -191,23 +191,23 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent"></div>
                 <div className="absolute bottom-5 left-8 text-left">
                   <h3 className="font-serif text-2xl font-black text-[#111111] leading-none">{selectedRoom.name}</h3>
-                  <p className="text-[10px] font-mono text-[#4C248C] tracking-wider uppercase mt-1.5 font-bold">{selectedRoom.tagline}</p>
+                  <p className="text-[10px] font-mono text-[#00C853] tracking-wider uppercase mt-1.5 font-bold">{selectedRoom.tagline}</p>
                 </div>
               </div>
 
               {/* Modal details */}
               <div className="p-8 md:p-10 space-y-6 max-h-[50vh] overflow-y-auto custom-scrollbar text-[#111111] text-left">
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 py-4 px-5 bg-[#F8F7F9] rounded-[18px] border border-[#E5E5E7] font-mono text-[10px] text-[#5F5E6B]">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 py-4 px-5 bg-[#F5F5F5] rounded-[18px] border border-[#E5E5E7] font-mono text-[10px] text-[#5F5E6B]">
                   <div>
-                    <span className="text-[#4C248C] block mb-0.5 uppercase tracking-wider font-bold">ESTIMATED RATE</span>
-                    <strong className="text-[#4C248C] font-bold text-xs">${selectedRoom.basePriceNightUSD} / night</strong>
+                    <span className="text-[#00C853] block mb-0.5 uppercase tracking-wider font-bold">ESTIMATED RATE</span>
+                    <strong className="text-[#00C853] font-bold text-xs">${selectedRoom.basePriceNightUSD} / night</strong>
                   </div>
                   <div>
-                    <span className="text-[#4C248C] block mb-0.5 uppercase tracking-wider font-bold">SIZE FOOTPRINT</span>
+                    <span className="text-[#00C853] block mb-0.5 uppercase tracking-wider font-bold">SIZE FOOTPRINT</span>
                     <strong className="text-[#111111] font-semibold text-xs">{selectedRoom.sizeSquareMeters} m²</strong>
                   </div>
                   <div>
-                    <span className="text-[#4C248C] block mb-0.5 uppercase tracking-wider font-bold">BEDDING TYPE</span>
+                    <span className="text-[#00C853] block mb-0.5 uppercase tracking-wider font-bold">BEDDING TYPE</span>
                     <strong className="text-[#111111] font-semibold text-xs">King Custom Ortho</strong>
                   </div>
                 </div>
@@ -223,13 +223,13 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
 
                 {/* Full Premium Amenity list for the Room */}
                 <div className="space-y-3">
-                  <h4 className="font-serif text-[#4C248C] text-xs font-bold tracking-widest uppercase">
+                  <h4 className="font-serif text-[#00C853] text-xs font-bold tracking-widest uppercase">
                     Included Amenities
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-sans text-[#5F5E6B]">
                     {selectedRoom.amenities.map((am, idx) => (
                       <div key={idx} className="flex items-center space-x-2 bg-white border border-[#E5E5E7] p-2 rounded-xl">
-                        <Check className="h-3.5 w-3.5 text-[#6D4EB3] shrink-0" />
+                        <Check className="h-3.5 w-3.5 text-[#00C853] shrink-0" />
                         <span className="font-light">{am}</span>
                       </div>
                     ))}
@@ -237,14 +237,14 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
                 </div>
 
                 {/* Security Guarantee banner */}
-                <div className="p-3.5 bg-[#FAF9FD] border border-[#E5E5E7] rounded-xl text-[9px] font-mono text-[#4C248C] tracking-widest uppercase flex items-center space-x-3 font-bold">
-                  <Shield className="h-4 w-4 text-[#6D4EB3] shrink-0" />
+                <div className="p-3.5 bg-[#F5F5F5] border border-[#E5E5E7] rounded-xl text-[9px] font-mono text-[#00C853] tracking-widest uppercase flex items-center space-x-3 font-bold">
+                  <Shield className="h-4 w-4 text-[#00C853] shrink-0" />
                   <span>PRE-ENTRY SANITIZED • BIOMETRIC DOOR ACCESS • PRIVATE MINI-BAR</span>
                 </div>
               </div>
 
               {/* Modal footer CTA */}
-              <div className="p-5 bg-[#F8F7F9] border-t border-[#E5E5E7] flex justify-end space-x-3">
+              <div className="p-5 bg-[#F5F5F5] border-t border-[#E5E5E7] flex justify-end space-x-3">
                 <button
                   onClick={() => setSelectedRoom(null)}
                   className="px-5 py-2 text-[10px] font-mono tracking-widest text-[#5F5E6B] hover:text-[#111111] uppercase cursor-pointer"
@@ -253,7 +253,7 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
                 </button>
                 <button
                   onClick={() => handleBookSelect(selectedRoom.id)}
-                  className="px-6 py-2.5 bg-[#4C248C] hover:bg-[#3B1C6E] text-white font-mono text-[9.5px] tracking-widest font-bold rounded-full shadow-sm cursor-pointer"
+                  className="px-6 py-2.5 bg-[#00C853] hover:bg-[#00C853]/90 text-white font-mono text-[9.5px] tracking-widest font-bold rounded-full shadow-sm cursor-pointer"
                 >
                   PLAN THIS STUDIO
                 </button>
@@ -267,7 +267,7 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
           <div className="mt-24 text-center relative z-20 font-mono">
             <button
               onClick={onViewAll}
-              className="px-8 py-4 bg-white hover:bg-[#4C248C] text-[#4C248C] hover:text-white border border-[#4C248C]/40 hover:border-[#4C248C] rounded-full font-mono text-[9.5px] tracking-[0.25em] font-bold uppercase transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-md flex items-center justify-center space-x-3.5 mx-auto cursor-pointer"
+              className="px-8 py-4 bg-white hover:bg-[#00C853] text-[#00C853] hover:text-white border border-[#00C853]/40 hover:border-[#00C853] rounded-full font-mono text-[9.5px] tracking-[0.25em] font-bold uppercase transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-md flex items-center justify-center space-x-3.5 mx-auto cursor-pointer"
             >
               <span>DISCOVER ALL 8 RESIDENCES</span>
               <ArrowRight className="h-4 w-4 shrink-0 animate-pulse" />

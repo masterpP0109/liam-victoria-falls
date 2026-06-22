@@ -106,12 +106,12 @@ export default function FloatingConcierge() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="h-14 w-14 rounded-full bg-[#4C248C] text-white hover:bg-[#3B1C6E] flex items-center justify-center shadow-2xl transition-all duration-300 hover:rotate-[8deg] active:scale-95 group border border-[#4C248C] cursor-pointer relative"
+          className="h-14 w-14 rounded-full bg-black text-white hover:bg-black/80 flex items-center justify-center shadow-2xl transition-all duration-300 hover:rotate-[8deg] active:scale-95 group border border-black cursor-pointer relative"
           title="Chat with Concierge Butler"
         >
           <MessageSquare className="h-5.5 w-5.5 group-hover:scale-110 transition-transform text-white" />
           {/* Unread notification dot */}
-          <span className="absolute top-1 right-1 h-3.5 w-3.5 bg-[#6D4EB3] border-2 border-white rounded-full animate-bounce"></span>
+          <span className="absolute top-1 right-1 h-3.5 w-3.5 bg-[#00C853] border-2 border-white rounded-full animate-bounce"></span>
         </button>
       )}
 
@@ -119,10 +119,10 @@ export default function FloatingConcierge() {
       {isOpen && (
         <div className="bg-white border border-[#E5E5E7] rounded-[24px] w-80 sm:w-85 shadow-2xl overflow-hidden flex flex-col h-[420px] animate-fade-in text-black">
           {/* Header */}
-          <div className="bg-[#F8F7F9] p-4.5 border-b border-[#E5E5E7] flex items-center justify-between">
+          <div className="bg-[#F5F5F5] p-4.5 border-b border-[#E5E5E7] flex items-center justify-between">
             <div className="flex items-center space-x-2.5">
               <div className="h-8 w-8 rounded-full bg-white border border-[#E5E5E7] flex items-center justify-center shadow-sm">
-                <Sparkles className="h-4 w-4 text-[#4C248C]" />
+                <Sparkles className="h-4 w-4 text-[#00C853]" />
               </div>
               <div className="text-left animate-pulse">
                 <span className="font-serif text-xs font-black text-black leading-none uppercase tracking-wider block">Estate Butler</span>
@@ -132,7 +132,7 @@ export default function FloatingConcierge() {
             
             <button
               onClick={() => setIsOpen(false)}
-              className="p-1 rounded-full text-[#5F5E6B] hover:text-[#4C248C] hover:bg-[#4C248C]/5 transition-colors cursor-pointer"
+              className="p-1 rounded-full text-[#5F5E6B] hover:text-[#00C853] hover:bg-[#00C853]/5 transition-colors cursor-pointer"
             >
               <X className="h-4.5 w-4.5" />
             </button>
@@ -148,7 +148,7 @@ export default function FloatingConcierge() {
                 <div
                   className={`max-w-[85%] rounded-[18px] p-3 text-left leading-relaxed shadow-sm ${
                     ch.sender === "user"
-                      ? "bg-[#4C248C] text-white font-semibold"
+                      ? "bg-[#00C853] text-white font-semibold"
                       : "bg-white border border-[#E5E5E7] text-black font-light"
                   }`}
                 >
@@ -160,7 +160,7 @@ export default function FloatingConcierge() {
             {isTyping && (
               <div className="flex justify-start">
                 <div className="bg-white border border-[#E5E5E7] rounded-[18px] px-4 py-2 text-[#5F5E6B] font-mono text-[9px] uppercase tracking-wider flex items-center space-x-2 animate-pulse shadow-sm">
-                  <Loader2 className="h-3 w-3 animate-spin text-[#4C248C] shrink-0" />
+                  <Loader2 className="h-3 w-3 animate-spin text-[#00C853] shrink-0" />
                   <span> butler drafting...</span>
                 </div>
               </div>
@@ -168,17 +168,17 @@ export default function FloatingConcierge() {
           </div>
 
           {/* Input control */}
-          <form onSubmit={handleSendMessage} className="p-3 bg-[#F8F7F9] border-t border-[#E5E5E7] flex items-center space-x-2">
+          <form onSubmit={handleSendMessage} className="p-3 bg-[#F5F5F5] border-t border-[#E5E5E7] flex items-center space-x-2">
             <input
               type="text"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Ask about breakfast, falls, pool..."
-              className="flex-1 bg-white border border-[#E5E5E7] rounded-full px-4 py-2 text-xs text-black focus:outline-none focus:border-[#4C248C] font-sans font-light shadow-inner"
+              className="flex-1 bg-white border border-[#E5E5E7] rounded-full px-4 py-2 text-xs text-black focus:outline-none focus:border-[#00C853] font-sans font-light shadow-inner"
             />
             <button
               type="submit"
-              className="p-2 bg-[#4C248C] hover:bg-[#3B1C6E] text-white rounded-full transition-all active:scale-90 cursor-pointer shrink-0 shadow-md"
+              className="p-2 bg-[#00C853] hover:bg-[#00C853]/90 text-white rounded-full transition-all active:scale-90 cursor-pointer shrink-0 shadow-md"
               aria-label="Send messenger message"
             >
               <Send className="h-3.5 w-3.5 text-white" />

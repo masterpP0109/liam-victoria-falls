@@ -24,23 +24,23 @@ gsap.registerPlugin(ScrollTrigger);
 const getAmenityIcon = (iconName: string) => {
   switch (iconName) {
     case "Pool":
-      return <span className="text-xl font-mono font-bold text-[#4C248C] select-none">🏊</span>;
+      return <span className="text-xl font-mono font-bold text-[#00C853] select-none">🏊</span>;
     case "Compass":
-      return <Compass className="h-5 w-5 text-[#6D4EB3]" />;
+      return <Compass className="h-5 w-5 text-[#00C853]" />;
     case "Coffee":
-      return <Coffee className="h-5 w-5 text-[#6D4EB3]" />;
+      return <Coffee className="h-5 w-5 text-[#00C853]" />;
     case "Wine":
-      return <Wine className="h-5 w-5 text-[#6D4EB3]" />;
+      return <Wine className="h-5 w-5 text-[#00C853]" />;
     case "Laptop":
-      return <Laptop className="h-5 w-5 text-[#6D4EB3]" />;
+      return <Laptop className="h-5 w-5 text-[#00C853]" />;
     case "TreePine":
-      return <TreePine className="h-5 w-5 text-[#6D4EB3]" />;
+      return <TreePine className="h-5 w-5 text-[#00C853]" />;
     case "Wifi":
-      return <Wifi className="h-5 w-5 text-[#6D4EB3]" />;
+      return <Wifi className="h-5 w-5 text-[#00C853]" />;
     case "ShieldCheck":
-      return <ShieldCheck className="h-5 w-5 text-[#6D4EB3]" />;
+      return <ShieldCheck className="h-5 w-5 text-[#00C853]" />;
     default:
-      return <Sparkles className="h-5 w-5 text-[#6D4EB3]" />;
+      return <Sparkles className="h-5 w-5 text-[#00C853]" />;
   }
 };
 
@@ -80,12 +80,12 @@ export default function Amenities() {
         {/* Section Header styled in the epic HERITAGE style */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-20 gap-8">
           <div className="max-w-xl space-y-4">
-            <div className="inline-flex items-center space-x-1.5 text-[#4C248C] font-mono text-[9px] tracking-[0.25em] uppercase font-bold">
-              <Sparkles className="h-3.5 w-3.5 text-[#6D4EB3]" />
+            <div className="inline-flex items-center space-x-1.5 text-[#00C853] font-mono text-[9px] tracking-[0.25em] uppercase font-bold">
+              <Sparkles className="h-3.5 w-3.5 text-[#00C853]" />
               <span>THE FIVE-STAR PROVISIONS</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-black tracking-tight leading-none">
-              A Refined Standard of <span className="text-[#4C248C] italic">Comfort</span>.
+              A Refined Standard of <span className="text-[#00C853] italic">Comfort</span>.
             </h2>
           </div>
           <div className="max-w-md">
@@ -106,20 +106,20 @@ export default function Amenities() {
               // Plunge pool: large double horizontal card
               bentoStyles = "md:col-span-8 bg-white border border-[#E5E5E7] flex flex-col md:flex-row justify-between p-8 md:p-10";
             } else if (idx === 1) {
-              // Rooftop watchtower: tall, distinct background card in deep purple
-              bentoStyles = "md:col-span-4 bg-[#4C248C] text-white border border-[#4C248C] p-8 md:p-10";
+              // Rooftop watchtower: tall, distinct background card in deep matte black
+              bentoStyles = "md:col-span-4 bg-black text-white border border-black p-8 md:p-10";
             } else if (idx === 2) {
               // English Breakfast: medium sized ivory highlight
               bentoStyles = "md:col-span-6 bg-white border border-[#E5E5E7] p-8 md:p-10";
             } else if (idx === 3) {
               // Sunset reception: medium sized ivory highlight
-              bentoStyles = "md:col-span-6 bg-[#F8F7F9] border border-[#E5E5E7] p-8 md:p-10";
+              bentoStyles = "md:col-span-6 bg-[#F5F5F5] border border-[#E5E5E7] p-8 md:p-10";
             } else if (idx === 4) {
               // High-spec workspace
               bentoStyles = "md:col-span-4 bg-white border border-[#E5E5E7] p-8 md:p-10";
             } else if (idx === 5) {
               // Garden Picnic
-              bentoStyles = "md:col-span-4 bg-[#F8F7F9] border border-[#E5E5E7] p-8 md:p-10";
+              bentoStyles = "md:col-span-4 bg-[#F5F5F5] border border-[#E5E5E7] p-8 md:p-10";
             } else if (idx === 6) {
               // Wi-Fi
               bentoStyles = "md:col-span-4 bg-white border border-[#E5E5E7] p-8 md:p-10";
@@ -140,7 +140,7 @@ export default function Amenities() {
                   <>
                     <div className="flex-1 flex flex-col justify-between pr-4 space-y-6">
                       <div className="space-y-4">
-                        <div className="h-11 w-11 rounded-full bg-[#F8F7F9] border border-[#E5E5E7] flex items-center justify-center group-hover:bg-[#4C248C] group-hover:text-white duration-300">
+                        <div className="h-11 w-11 rounded-full bg-[#F5F5F5] border border-[#E5E5E7] flex items-center justify-center group-hover:bg-[#00C853]/10 group-hover:text-[#00C853] duration-300">
                           <span className="group-hover:scale-110 duration-300">{getAmenityIcon(am.icon)}</span>
                         </div>
                         <div>
@@ -155,7 +155,7 @@ export default function Amenities() {
                       </div>
                     </div>
                     {/* Visual element on the right of horizontal block */}
-                    <div className="w-full md:w-2/5 aspect-[4/3] md:aspect-auto mt-6 md:mt-0 rounded-[20px] overflow-hidden bg-[#F8F7F9] border border-[#E5E5E7]">
+                    <div className="w-full md:w-2/5 aspect-[4/3] md:aspect-auto mt-6 md:mt-0 rounded-[20px] overflow-hidden bg-[#F5F5F5] border border-[#E5E5E7]">
                       <img
                         src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=600&q=80"
                         alt="Liam Luxury plunge pool"
@@ -166,7 +166,7 @@ export default function Amenities() {
                 ) : (
                   <>
                     <div className="space-y-6 flex-grow text-left">
-                      <div className={`h-11 w-11 rounded-full flex items-center justify-center duration-300 ${isDarkCard ? 'bg-white/10 border border-white/20 group-hover:bg-[#6D4EB3]' : 'bg-[#F8F7F9] border border-[#E5E5E7] group-hover:bg-[#4C248C] group-hover:text-white'}`}>
+                      <div className={`h-11 w-11 rounded-full flex items-center justify-center duration-300 ${isDarkCard ? 'bg-white/10 border border-white/20 group-hover:bg-[#00C853] group-hover:border-[#00C853]' : 'bg-[#F5F5F5] border border-[#E5E5E7] group-hover:bg-[#00C853]/10'}`}>
                         <span className="group-hover:scale-110 duration-300">
                           {isDarkCard ? <Compass className="h-5 w-5 text-white" /> : getAmenityIcon(am.icon)}
                         </span>
@@ -183,7 +183,7 @@ export default function Amenities() {
                     {/* Foot Tag */}
                     <div className={`mt-8 pt-4 border-t text-[8.5px] font-mono tracking-widest uppercase flex items-center justify-between ${isDarkCard ? 'border-white/10 text-white/50' : 'border-[#E5E5E7]/50 text-[#5F5E6B]'}`}>
                       <span>VERIFIED COMFORT</span>
-                      <span className={isDarkCard ? 'text-white font-bold' : 'text-[#4C248C] font-bold'}>{am.category}</span>
+                      <span className={isDarkCard ? 'text-white font-bold' : 'text-[#00C853] font-bold'}>{am.category}</span>
                     </div>
                   </>
                 )}
@@ -202,10 +202,10 @@ export default function Amenities() {
                 document.getElementById("amenities")?.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="px-8 py-3.5 bg-white text-[#4C248C] hover:bg-[#4C248C] hover:text-white border border-[#E5E5E7] hover:border-[#4C248C] rounded-full font-mono text-[9.5px] tracking-widest font-bold uppercase transition-all duration-300 transform active:scale-95 shadow-sm flex items-center space-x-2.5 mx-auto cursor-pointer"
+            className="px-8 py-3.5 bg-white text-black hover:text-white hover:bg-[#00C853] border border-[#E5E5E7] hover:border-[#00C853] rounded-full font-mono text-[9.5px] tracking-widest font-bold uppercase transition-all duration-300 transform active:scale-95 shadow-sm flex items-center space-x-2.5 mx-auto cursor-pointer"
           >
             <span>{showAll ? "SEE FEWER FEATURES" : "EXPLORE ALL 8 SERVICE PROVISIONS"}</span>
-            <span className="h-1.5 w-1.5 rounded-full bg-[#4C248C] animate-pulse"></span>
+            <span className="h-1.5 w-1.5 rounded-full bg-[#00C853] animate-pulse"></span>
           </button>
         </div>
 
@@ -213,8 +213,8 @@ export default function Amenities() {
         <div className="amenity-bento-card mt-24 bg-white rounded-[32px] border border-[#E5E5E7] p-8 md:p-12 shadow-md relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
             <div className="lg:col-span-7 space-y-6 text-left">
-              <span className="text-[#4C248C] font-mono text-[9px] tracking-[0.25em] uppercase block font-bold flex items-center gap-1.5">
-                <Award className="w-3.5 h-3.5 text-[#6D4EB3]" /> ESTATE HIGHLIGHT FEATURE
+              <span className="text-[#00C853] font-mono text-[9px] tracking-[0.25em] uppercase block font-bold flex items-center gap-1.5">
+                <Award className="w-3.5 h-3.5 text-[#00C853]" /> ESTATE HIGHLIGHT FEATURE
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl font-black text-black tracking-tight leading-none">
                 The Rooftop Viewing Platform & Sky Deck.
@@ -223,13 +223,13 @@ export default function Amenities() {
                 Exclusive to Liam is our secure scenic viewing deck. Guests wake up to stunning panoramic views from the rooftop terrace over the Zambezi canopy and experience "The Smoke That Thunders" rising into the morning sky.
               </p>
               
-              <div className="flex flex-wrap gap-3 text-[9px] font-mono text-[#4C248C] uppercase tracking-wider">
-                <div className="flex items-center space-x-2 bg-[#F8F7F9] px-4 py-2 rounded-full border border-[#E5E5E7]">
-                  <span className="w-1.5 h-1.5 bg-[#6D4EB3] rounded-full"></span>
+              <div className="flex flex-wrap gap-3 text-[9px] font-mono text-black uppercase tracking-wider">
+                <div className="flex items-center space-x-2 bg-[#F5F5F5] px-4 py-2 rounded-full border border-[#E5E5E7]">
+                  <span className="w-1.5 h-1.5 bg-[#00C853] rounded-full"></span>
                   <span>Sunset optics & lounges</span>
                 </div>
-                <div className="flex items-center space-x-2 bg-[#F8F7F9] px-4 py-2 rounded-full border border-[#E5E5E7]">
-                  <span className="w-1.5 h-1.5 bg-[#6D4EB3] rounded-full"></span>
+                <div className="flex items-center space-x-2 bg-[#F5F5F5] px-4 py-2 rounded-full border border-[#E5E5E7]">
+                  <span className="w-1.5 h-1.5 bg-[#00C853] rounded-full"></span>
                   <span>Gorge spotters scope</span>
                 </div>
               </div>

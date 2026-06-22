@@ -147,8 +147,8 @@ export default function Testimonials() {
               <div className="font-mono text-xs text-left sm:text-right flex items-center sm:justify-end space-x-3">
                 <div>
                   <span className="text-[#111111] font-semibold block text-[10px] tracking-wider uppercase font-mono">{activeReview.date}</span>
-                  <div className="text-[8.5px] text-[#4C248C] font-bold uppercase tracking-widest flex items-center mt-1">
-                    <ShieldCheck className="h-4 w-4 text-[#4C248C] mr-1 shrink-0" />
+                  <div className="text-[8.5px] text-[#00C853] font-bold uppercase tracking-widest flex items-center mt-1">
+                    <ShieldCheck className="h-4 w-4 text-[#00C853] mr-1 shrink-0" />
                     <span>VERIFIED GUEST STAY</span>
                   </div>
                 </div>
@@ -157,14 +157,14 @@ export default function Testimonials() {
           </div>
 
           {/* Carousel Interactive Controls (Arrow navigators) */}
-          <div className="flex items-center justify-between mt-12 pt-6 border-t border-[#FAF9FD]">
+          <div className="flex items-center justify-between mt-12 pt-6 border-t border-[#F5F5F5]">
             <div className="hidden sm:flex items-center space-x-2">
               {TESTIMONIALS.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => handleReviewChange(idx)}
                   className={`h-1.5 rounded-full transition-all duration-300 ${
-                    idx === activeIdx ? "w-6 bg-[#4C248C]" : "w-1.5 bg-[#E5E5E7] hover:bg-[#6D4EB3]"
+                    idx === activeIdx ? "w-6 bg-[#00C853]" : "w-1.5 bg-[#E5E5E7] hover:bg-[#00C853]"
                   }`}
                   aria-label={`Slide ${idx + 1}`}
                 />
@@ -174,13 +174,13 @@ export default function Testimonials() {
             <div className="flex items-center space-x-2 w-full sm:w-auto justify-end">
               <button
                 onClick={handlePrev}
-                className="p-3 bg-white border border-[#E5E5E7] hover:border-[#4C248C] text-[#4C248C] hover:bg-[#FAF9FD] rounded-full transition-all cursor-pointer shadow-sm active:scale-95 flex items-center justify-center"
+                className="p-3 bg-white border border-[#E5E5E7] hover:border-[#00C853] text-[#00C853] hover:bg-[#F5F5F5] rounded-full transition-all cursor-pointer shadow-sm active:scale-95 flex items-center justify-center"
               >
                 <ChevronLeft className="h-4.5 w-4.5" />
               </button>
               <button
                 onClick={handleNext}
-                className="p-3 bg-white border border-[#E5E5E7] hover:border-[#4C248C] text-[#4C248C] hover:bg-[#FAF9FD] rounded-full transition-all cursor-pointer shadow-sm active:scale-95 flex items-center justify-center"
+                className="p-3 bg-white border border-[#E5E5E7] hover:border-[#00C853] text-[#00C853] hover:bg-[#F5F5F5] rounded-full transition-all cursor-pointer shadow-sm active:scale-95 flex items-center justify-center"
               >
                 <ChevronRight className="h-4.5 w-4.5" />
               </button>
@@ -194,7 +194,7 @@ export default function Testimonials() {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-t border-b border-[#E5E5E7] text-center font-serif"
         >
           <div className="space-y-2">
-            <span className="font-serif text-4xl sm:text-5xl font-black text-[#4C248C] block tracking-tight">
+            <span className="font-serif text-4xl sm:text-5xl font-black text-[#F5B800] block tracking-tight">
               {scoreCount.toFixed(1)}
             </span>
             <span className="text-[8.5px] font-mono text-[#5F5E6B] tracking-[0.2em] block uppercase font-bold">
@@ -203,7 +203,7 @@ export default function Testimonials() {
           </div>
 
           <div className="space-y-2">
-            <span className="font-serif text-4xl sm:text-5xl font-black text-[#4C248C] block tracking-tight">
+            <span className="font-serif text-4xl sm:text-5xl font-black text-[#F5B800] block tracking-tight">
               {satisfactionCount}%
             </span>
             <span className="text-[8.5px] font-mono text-[#5F5E6B] tracking-[0.2em] block uppercase font-bold">
@@ -212,7 +212,7 @@ export default function Testimonials() {
           </div>
 
           <div className="space-y-2">
-            <span className="font-serif text-4xl sm:text-5xl font-black text-[#4C248C] block tracking-tight">
+            <span className="font-serif text-4xl sm:text-5xl font-black text-[#F5B800] block tracking-tight">
               {studiosCount}
             </span>
             <span className="text-[8.5px] font-mono text-[#5F5E6B] tracking-[0.2em] block uppercase font-bold">
@@ -221,7 +221,7 @@ export default function Testimonials() {
           </div>
 
           <div className="space-y-2">
-            <span className="font-serif text-4xl sm:text-5xl font-black text-[#4C248C] block tracking-tight">
+            <span className="font-serif text-4xl sm:text-5xl font-black text-[#F5B800] block tracking-tight">
               {distanceCount}
             </span>
             <span className="text-[8.5px] font-mono text-[#5F5E6B] tracking-[0.2em] block uppercase font-bold">
