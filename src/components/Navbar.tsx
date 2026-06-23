@@ -75,14 +75,14 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
             <span className="font-serif tracking-[0.22em] text-black font-black text-xs leading-none">
               LIAM
             </span>
-            <span className="text-[7.5px] font-mono tracking-[0.2em] text-[#7B52EE] uppercase leading-none mt-0.5 font-bold">
+            <span className="text-[10px] font-sans tracking-[0.08em] text-[#7B52EE] uppercase leading-none mt-0.5 font-bold">
               Victoria Falls
             </span>
           </div>
         </div>
 
         {/* Navigation Links - Center (Desktop) */}
-        <nav className="hidden md:flex items-center space-x-7 font-mono text-[10px] tracking-widest text-[#5F5E6B] font-medium">
+        <nav className="hidden md:flex items-center space-x-7 font-sans text-xs tracking-wider text-[#5F5E6B] font-semibold">
           <button
             onClick={() => handleLinkClick("home", "about")}
             className={`hover:text-[#7B52EE] hover:scale-105 active:scale-95 transition-all cursor-pointer font-bold ${
@@ -142,7 +142,7 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
           <button
             id="nav-planner-cta"
             onClick={() => handleLinkClick("planner")}
-            className={`hidden md:flex font-mono tracking-widest text-[9.5px] font-bold px-4 py-2 rounded-full transition-all duration-300 items-center space-x-1.5 ${
+            className={`hidden md:flex font-sans tracking-wide text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 items-center space-x-1.5 ${
               activePage === "planner"
                 ? "bg-[#7B52EE]/10 text-[#7B52EE] border border-[#7B52EE]/20"
                 : "bg-[#7B52EE] hover:bg-[#5E27EA] text-white active:scale-95 shadow-sm"
@@ -166,7 +166,7 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
       {/* Mobile Dropdown Menu Container */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-2xl border border-[#E5E5E7] w-[calc(100%-2rem)] max-w-sm rounded-[24px] absolute top-16 right-4 py-5 px-5 space-y-4 shadow-xl z-50 animate-fade-in pointer-events-auto text-left">
-          <div className="flex flex-col space-y-2 font-mono text-[10px] tracking-widest text-[#5F5E6B] font-semibold">
+          <div className="flex flex-col space-y-2 font-sans text-xs tracking-wider text-[#5F5E6B] font-semibold">
             <button
               onClick={() => handleLinkClick("home", "about")}
               className="text-left py-2.5 border-b border-[#E5E5E7]/40 hover:text-[#7B52EE]"
@@ -202,14 +202,14 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
           <div className="space-y-2 pt-3 border-t border-[#E5E5E7]">
             <button
               onClick={() => handleLinkClick("portal")}
-              className="w-full py-2.5 bg-white text-black border border-[#E5E5E7] rounded-full font-mono text-[9px] tracking-wider flex items-center justify-center space-x-1.5 shadow-sm"
+              className="w-full py-2.5 bg-white text-black border border-[#E5E5E7] rounded-full font-sans text-[11px] font-medium tracking-wide flex items-center justify-center space-x-1.5 shadow-sm"
             >
               <UserSquare2 className="h-3.5 w-3.5 text-[#7B52EE]" />
               <span>CONCIERGE PORTAL ({submittedInquiryCount})</span>
             </button>
             <button
               onClick={() => handleLinkClick("planner")}
-              className="w-full py-3 bg-[#7B52EE] hover:bg-[#5E27EA] text-white font-mono text-[9.5px] font-bold tracking-widest rounded-full flex items-center justify-center space-x-1.5 shadow-md"
+              className="w-full py-3 bg-[#7B52EE] hover:bg-[#5E27EA] text-white font-sans text-[11px] font-bold tracking-wide rounded-full flex items-center justify-center space-x-1.5 shadow-md"
             >
               <Calendar className="h-3.5 w-3.5 text-white" />
               <span>BUILD MY STAY</span>

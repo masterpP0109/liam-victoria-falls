@@ -103,4 +103,22 @@ html {
   opacity: 0.9;
 }
 
+/* Explicit high-priority typography override for Navbar and sections with images */
+#navbar-capsule,
+#navbar-capsule *,
+#hero,
+#hero *,
+#about,
+#about *,
+#studios,
+#studios *,
+#amenities,
+#amenities *,
+#experiences,
+#experiences *,
+#planner-section,
+#planner-section * {
+  font-family: "Plus Jakarta Sans", "Google Sans Flex", "Inter", "Helvetica Neue", Arial, sans-serif !important;
+}
+
 

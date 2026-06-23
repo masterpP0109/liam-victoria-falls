@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from "react";
 import { STUDIOS, EXPERIENCES } from "../data";
 import { PlannerState, ItineraryFeedback, RoomStudio } from "../types";
+import SmartImage from "./SmartImage";
 import {
   Compass,
   Users,
@@ -420,7 +421,7 @@ export default function StayPlanner({ onPlanComplete, preSelectedRoomId }: StayP
                         }`}
                       >
                         <div className="h-11 w-11 shrink-0 rounded-lg overflow-hidden bg-[#E5E5E5]">
-                          <img src={s.images[0]} alt={s.name} className="h-full w-full object-cover" />
+                          <SmartImage src={s.images[0]} alt={s.name} className="h-full w-full object-cover" />
                         </div>
                         <div className="space-y-0.5">
                           <strong className="text-xs font-serif font-bold text-black block">{s.name}</strong>
