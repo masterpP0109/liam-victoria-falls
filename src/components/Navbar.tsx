@@ -29,8 +29,9 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
 
   // GSAP sticky scroll micro-scale down contraction
   useEffect(() => {
+    let tween: gsap.core.Tween | null = null;
     if (navContainerRef.current) {
-      gsap.to(navContainerRef.current, {
+      tween = gsap.to(navContainerRef.current, {
         scale: scrolled ? 0.96 : 1.0,
         y: scrolled ? 6 : 0,
         paddingLeft: scrolled ? "1.25rem" : "1.75rem",
@@ -41,6 +42,9 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
         ease: "power3.out",
       });
     }
+    return () => {
+      if (tween) tween.kill();
+    };
   }, [scrolled]);
 
   const handleLinkClick = (page: "home" | "planner" | "portal", sectionId?: string) => {

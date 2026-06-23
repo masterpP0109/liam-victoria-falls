@@ -25,17 +25,24 @@ export default function Testimonials() {
 
   // Stat counting triggers with ScrollTrigger
   useEffect(() => {
-    ScrollTrigger.create({
+    let scoreInterval: any = null;
+    let satInterval: any = null;
+    let stdInterval: any = null;
+
+    const trigger = ScrollTrigger.create({
       trigger: "#stats-metric-trigger",
       start: "top 85%",
       onEnter: () => {
         // Count score up to 5.0
         let scoreVal = 0;
-        const scoreInterval = setInterval(() => {
+        scoreInterval = setInterval(() => {
           scoreVal += 0.5;
           if (scoreVal >= 5.0) {
             setScoreCount(5.0);
-            clearInterval(scoreInterval);
+            if (scoreInterval) {
+              clearInterval(scoreInterval);
+              scoreInterval = null;
+            }
           } else {
             setScoreCount(scoreVal);
           }
@@ -43,11 +50,14 @@ export default function Testimonials() {
 
         // Count satisfaction to 100%
         let satVal = 0;
-        const satInterval = setInterval(() => {
+        satInterval = setInterval(() => {
           satVal += 10;
           if (satVal >= 100) {
             setSatisfactionCount(100);
-            clearInterval(satInterval);
+            if (satInterval) {
+              clearInterval(satInterval);
+              satInterval = null;
+            }
           } else {
             setSatisfactionCount(satVal);
           }
@@ -55,17 +65,27 @@ export default function Testimonials() {
 
         // Count studios to 8
         let stdVal = 0;
-        const stdInterval = setInterval(() => {
+        stdInterval = setInterval(() => {
           stdVal += 1;
           if (stdVal >= 8) {
             setStudiosCount(8);
-            clearInterval(stdInterval);
+            if (stdInterval) {
+              clearInterval(stdInterval);
+              stdInterval = null;
+            }
           } else {
             setStudiosCount(stdVal);
           }
         }, 100);
       }
     });
+
+    return () => {
+      if (trigger) trigger.kill();
+      if (scoreInterval) clearInterval(scoreInterval);
+      if (satInterval) clearInterval(satInterval);
+      if (stdInterval) clearInterval(stdInterval);
+    };
   }, []);
 
   // Animating transition between reviews

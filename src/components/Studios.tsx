@@ -33,9 +33,10 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
   }, [activeIdx]);
 
   useEffect(() => {
+    let anim: gsap.core.Tween | null = null;
     // Animate the main gallery panel on scroll/enter
     if (galleryRef.current) {
-      gsap.fromTo(
+      anim = gsap.fromTo(
         galleryRef.current,
         { opacity: 0, y: 30 },
         {
@@ -51,6 +52,13 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
         }
       );
     }
+
+    return () => {
+      if (anim) {
+        if (anim.scrollTrigger) anim.scrollTrigger.kill();
+        anim.kill();
+      }
+    };
   }, []);
 
   const handleBookSelect = (roomId: string) => {

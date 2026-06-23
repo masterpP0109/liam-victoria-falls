@@ -67,6 +67,10 @@ export default function Hero({ onStartPlanner, onExploreRooms }: HeroProps) {
         "-=0.8"
       );
     }
+
+    return () => {
+      tl.kill();
+    };
   }, []);
 
   const marqueePartners = [

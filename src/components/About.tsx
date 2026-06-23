@@ -15,9 +15,10 @@ export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let anim: gsap.core.Tween | null = null;
     const cards = containerRef.current?.querySelectorAll(".about-animate-card");
     if (cards && cards.length > 0) {
-      gsap.fromTo(
+      anim = gsap.fromTo(
         cards,
         { opacity: 0, y: 40 },
         {
@@ -34,6 +35,13 @@ export default function About() {
         }
       );
     }
+
+    return () => {
+      if (anim) {
+        if (anim.scrollTrigger) anim.scrollTrigger.kill();
+        anim.kill();
+      }
+    };
   }, []);
 
   return (

@@ -49,9 +49,10 @@ export default function Amenities() {
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
+    let anim: gsap.core.Tween | null = null;
     const cards = containerRef.current?.querySelectorAll(".amenity-bento-card");
     if (cards && cards.length > 0) {
-      gsap.fromTo(
+      anim = gsap.fromTo(
         cards,
         { opacity: 0, y: 30 },
         {
@@ -68,6 +69,13 @@ export default function Amenities() {
         }
       );
     }
+
+    return () => {
+      if (anim) {
+        if (anim.scrollTrigger) anim.scrollTrigger.kill();
+        anim.kill();
+      }
+    };
   }, [showAll]);
 
   // We split or render uniquely according to Bento styling
