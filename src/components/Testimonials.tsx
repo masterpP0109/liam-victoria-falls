@@ -191,41 +191,41 @@ export default function Testimonials() {
         {/* Counters Metric Trigger Section */}
         <div 
           id="stats-metric-trigger"
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-t border-b border-[#E5E5E7] text-center font-serif"
+          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-t border-b border-[#E5E5E7] text-center font-sans"
         >
           <div className="space-y-2">
-            <span className="font-serif text-4xl sm:text-5xl font-black text-[#F5B800] block tracking-tight">
+            <span className="font-sans text-4xl sm:text-5xl font-extrabold text-[#7B52EE] block tracking-tight">
               {scoreCount.toFixed(1)}
             </span>
-            <span className="text-[8.5px] font-mono text-[#5F5E6B] tracking-[0.2em] block uppercase font-bold">
+            <span className="text-[10px] font-sans text-[#5F5E6B] tracking-[0.2em] block uppercase font-bold">
               CONDE NAST AGGREGATE
             </span>
           </div>
 
           <div className="space-y-2">
-            <span className="font-serif text-4xl sm:text-5xl font-black text-[#F5B800] block tracking-tight">
+            <span className="font-sans text-4xl sm:text-5xl font-extrabold text-[#7B52EE] block tracking-tight">
               {satisfactionCount}%
             </span>
-            <span className="text-[8.5px] font-mono text-[#5F5E6B] tracking-[0.2em] block uppercase font-bold">
+            <span className="text-[10px] font-sans text-[#5F5E6B] tracking-[0.2em] block uppercase font-bold">
               SATISFACTION RATING
             </span>
           </div>
 
           <div className="space-y-2">
-            <span className="font-serif text-4xl sm:text-5xl font-black text-[#F5B800] block tracking-tight">
+            <span className="font-sans text-4xl sm:text-5xl font-extrabold text-[#7B52EE] block tracking-tight">
               {studiosCount}
             </span>
-            <span className="text-[8.5px] font-mono text-[#5F5E6B] tracking-[0.2em] block uppercase font-bold">
+            <span className="text-[10px] font-sans text-[#5F5E6B] tracking-[0.2em] block uppercase font-bold">
               INDIVIDUAL RESIDENCES
             </span>
           </div>
 
           <div className="space-y-2">
-            <span className="font-serif text-4xl sm:text-5xl font-black text-[#F5B800] block tracking-tight">
+            <span className="font-sans text-4xl sm:text-5xl font-extrabold text-[#7B52EE] block tracking-tight">
               {distanceCount}
             </span>
-            <span className="text-[8.5px] font-mono text-[#5F5E6B] tracking-[0.2em] block uppercase font-bold">
-              MINS TO WATERFALL GATE
+            <span className="text-[10px] font-sans text-[#5F5E6B] tracking-[0.2em] block uppercase font-bold">
+              MINS
             </span>
           </div>
         </div>

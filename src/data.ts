@@ -12,8 +12,8 @@ export const STUDIOS: RoomStudio[] = [
     tagline: "Individually styled luxury overlooking the landscaped poolside deck",
     description: "Our signature ground-floor luxury studio, styled with contemporary African accents, premium indigo fabrics, and bespoke hand-selected artwork. Features direct sliding door access to the pool deck.",
     images: [
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80"
+      "uploaded_image:2|https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80",
+      "uploaded_image:6|https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80"
     ],
     capacity: { adults: 2, children: 1 },
     amenities: [
@@ -37,8 +37,8 @@ export const STUDIOS: RoomStudio[] = [
     tagline: "A majestic space combining modern workspace comfort with relaxed elegance",
     description: "Designed for premium comfort, this studio offers generous spacing, an elegant seating recess, and high-specification workspace. Fully air-conditioned with concrete-cast designer bathroom features.",
     images: [
-      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80"
+      "uploaded_image:28|https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
+      "uploaded_image:9|https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80"
     ],
     capacity: { adults: 2, children: 0 },
     amenities: [
@@ -62,7 +62,7 @@ export const STUDIOS: RoomStudio[] = [
     tagline: "Inspired by 'The Smoke That Thunders' with high ceilings and elevated views",
     description: "An elegant studio option celebrating our proximity to Victoria Falls. Features original local art, high architectural ceilings, and a relaxing seating arrangement with premium leather armchairs.",
     images: [
-      "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80"
+      "uploaded_image:15|https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80"
     ],
     capacity: { adults: 2, children: 1 },
     amenities: [
@@ -86,7 +86,7 @@ export const STUDIOS: RoomStudio[] = [
     tagline: "Unrivalled luxury on our upper tier with scenic sunrise views",
     description: "Featuring soft neutral tones, custom leather elements, and beautiful morning light. Features a modern concrete architectural finish in the bathroom and an bespoke mini-bar area.",
     images: [
-      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80"
+      "uploaded_image:12|https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80"
     ],
     capacity: { adults: 2, children: 0 },
     amenities: [
@@ -110,7 +110,7 @@ export const STUDIOS: RoomStudio[] = [
     tagline: "A peaceful garden sanctuary designed for relaxation and space",
     description: "Tucked away for ultimate privacy, the Baobab Loft features comfortable leather sofas, customized wooden features, and a tranquil ambient setting. Perfect for long-term stays or focused remote working.",
     images: [
-      "https://images.unsplash.com/photo-1611891404779-497061209f4a?auto=format&fit=crop&w=1200&q=80"
+      "uploaded_image:10|https://images.unsplash.com/photo-1611891404779-497061209f4a?auto=format&fit=crop&w=1200&q=80"
     ],
     capacity: { adults: 2, children: 2 },
     amenities: [
@@ -134,7 +134,7 @@ export const STUDIOS: RoomStudio[] = [
     tagline: "Direct connection to the rooftop viewing deck and sky-lounge",
     description: "Perfectly placed for guests looking to maximize their time on our rooftop viewing deck. This air-conditioned sanctuary features rich natural finishes and modern hotel features.",
     images: [
-      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80"
+      "uploaded_image:21|https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80"
     ],
     capacity: { adults: 2, children: 0 },
     amenities: [
@@ -158,7 +158,7 @@ export const STUDIOS: RoomStudio[] = [
     tagline: "Indulgent luxury designed with romantic escapes in mind",
     description: "Liam's favorite honeymoon destination. Exquisite wooden custom craft, luxurious linens, mood lighting, and access to the outdoor terrace. A premium space styled to inspire.",
     images: [
-      "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80"
+      "uploaded_image:30|https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80"
     ],
     capacity: { adults: 2, children: 0 },
     amenities: [
@@ -182,7 +182,7 @@ export const STUDIOS: RoomStudio[] = [
     tagline: "Secluded sanctuary with direct access to the garden picnic area",
     description: "Enjoy natural serenity in this beautifully appointed ground-floor studio. Styled with timber worktops, concrete cast finishes and customized fittings, it provides a perfect baseline of luxury.",
     images: [
-      "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=80"
+      "uploaded_image:14|https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=80"
     ],
     capacity: { adults: 2, children: 1 },
     amenities: [
@@ -261,7 +261,7 @@ export const EXPERIENCES: NearbyExperience[] = [
     duration: "3-4 Hours",
     description: "A fully guided excursion into the Victoria Falls rainforest. Learn about the rich history and geomorphology, and stand before the world's largest falling sheet of water (just 5-mins away!).",
     icon: "CloudRain",
-    image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80",
+    image: "uploaded_image:3|https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80",
     adventureLevel: "mild",
     priceUSD: 45
   },
@@ -272,7 +272,7 @@ export const EXPERIENCES: NearbyExperience[] = [
     duration: "2.5 Hours",
     description: "Glide elegantly past sleeping hippos and elephants on the upper Zambezi. Includes premium drinks, fresh gourmet finger food, and a front-row seat to a dramatic orange African sunset.",
     icon: "Ship",
-    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80",
+    image: "uploaded_image:5|https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80",
     adventureLevel: "mild",
     priceUSD: 85
   },
@@ -283,7 +283,7 @@ export const EXPERIENCES: NearbyExperience[] = [
     duration: "15 min Flight",
     description: "The ultimate vantage point. Soar in a state-of-the-art helicopter over the Falls, the deep gorges, and surrounding national parks. Unrivalled travel photography opportunity.",
     icon: "Compass",
-    image: "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=800&q=80",
+    image: "uploaded_image:24|https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=800&q=80",
     adventureLevel: "high",
     priceUSD: 175
   },
@@ -294,7 +294,7 @@ export const EXPERIENCES: NearbyExperience[] = [
     duration: "Full-Day (10 hrs)",
     description: "Pre-arranged border crossing into Botswana. Includes a riverboat safari on the Chobe river and a land 4x4 game drive to witness Africa's largest elephant population up close.",
     icon: "Compass",
-    image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80",
+    image: "uploaded_image:25|https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80",
     adventureLevel: "medium",
     priceUSD: 165
   },
@@ -305,7 +305,7 @@ export const EXPERIENCES: NearbyExperience[] = [
     duration: "4 Hours",
     description: "Meet elephants rescued from drought or poaching, feed them alongside skilled naturalists, followed by an elegant, outdoor dinner under the southern stars.",
     icon: "Sparkles",
-    image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80",
+    image: "uploaded_image:26|https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80",
     adventureLevel: "mild",
     priceUSD: 110
   },
@@ -316,7 +316,7 @@ export const EXPERIENCES: NearbyExperience[] = [
     duration: "2 Hours",
     description: "Plunge 111 meters into the sheer spectacular gorge of the Zambezi, or ride the bridge swing with the roaring Falls as your canvas. Strictly for the adventure seeker.",
     icon: "Activity",
-    image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80",
+    image: "uploaded_image:31|https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80",
     adventureLevel: "high",
     priceUSD: 160
   }

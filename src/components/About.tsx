@@ -7,6 +7,7 @@ import React, { useEffect, useRef } from "react";
 import { Compass, Award, Shield, Hotel, Sparkles } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SmartImage from "./SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,8 +62,8 @@ export default function About() {
             
             {/* Elegant Image Card */}
             <div className="about-animate-card group rounded-[24px] overflow-hidden bg-[#F5F5F5] border border-[#E5E5E7] aspect-[4/3] relative flex items-center justify-center transition-all duration-500 hover:scale-[1.015] hover:shadow-md cursor-pointer">
-              <img
-                src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80"
+              <SmartImage
+                src="uploaded_image:28|https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80"
                 alt="Luxury Studio Interior Layout"
                 className="w-full h-full object-cover opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
               />
@@ -123,8 +124,8 @@ export default function About() {
 
             {/* Secondary Asymmetrical Image */}
             <div className="about-animate-card group rounded-[24px] overflow-hidden bg-[#F5F5F5] border border-[#E5E5E7] aspect-[21/9] relative flex items-center justify-center transition-all duration-500 hover:scale-[1.01] hover:shadow-md cursor-pointer">
-              <img
-                src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=80"
+              <SmartImage
+                src="uploaded_image:18|https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=80"
                 alt="Luxury pool water surface at Liam Victoria Falls"
                 className="w-full h-full object-cover opacity-95 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
               />

@@ -9,6 +9,7 @@ import { RoomStudio } from "../types";
 import { Bed, Users, Square, Check, ArrowRight, Eye, Sparkles, X, Shield, ChevronLeft, ChevronRight, Image as ImageIcon } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SmartImage from "./SmartImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,7 +105,7 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
             <div className="lg:col-span-7 bg-white rounded-[32px] border border-[#E5E5E7] p-4 flex flex-col justify-between shadow-xl min-h-[480px] relative overflow-hidden group">
               <div className="relative flex-1 rounded-[24px] overflow-hidden bg-[#F5F5F5] shadow-inner font-mono">
                 {/* Main Active Image */}
-                <img
+                <SmartImage
                   src={currentStudio.images[activeImageIdx]}
                   alt={currentStudio.name}
                   className="w-full h-full object-cover absolute inset-0 transition-all duration-700 ease-out group-hover:scale-105"
@@ -288,7 +289,7 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
                   >
                     {/* Micro Thumbnail */}
                     <div className="relative h-12 w-full rounded-md overflow-hidden bg-neutral-100 shadow-sm col-span-2">
-                      <img
+                      <SmartImage
                         src={studio.images[0]}
                         alt={studio.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform"
@@ -323,7 +324,7 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
             <div className="bg-white border border-[#E5E5E7] rounded-[32px] max-w-2xl w-full overflow-hidden shadow-2xl relative">
               {/* Modal header */}
               <div className="relative h-64 bg-[#F5F5F5] font-mono">
-                <img
+                <SmartImage
                   src={selectedRoom.images[0]}
                   alt={selectedRoom.name}
                   className="w-full h-full object-cover"

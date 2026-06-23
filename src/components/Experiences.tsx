@@ -7,6 +7,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { EXPERIENCES } from "../data";
 import { Clock, Landmark, ArrowRight, Check, Compass, Sparkles, ChevronRight, ChevronLeft } from "lucide-react";
 import gsap from "gsap";
+import SmartImage from "./SmartImage";
 
 interface ExperiencesProps {
   onSelectExperience: (expId: string) => void;
@@ -106,7 +107,7 @@ export default function Experiences({ onSelectExperience, selectedExperiences, p
                 <div>
                   {/* Photo Frame */}
                   <div className={`relative ${isWide ? "h-72" : "h-64"} overflow-hidden bg-[#F8F7F9]`}>
-                    <img
+                    <SmartImage
                       src={exp.image}
                       alt={exp.name}
                       className="w-full h-full object-cover opacity-95 group-hover:scale-105 transition-all duration-700"
