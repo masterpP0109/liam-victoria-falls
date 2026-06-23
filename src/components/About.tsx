@@ -41,12 +41,12 @@ export default function About() {
         
         {/* Intro Tag & Editorial Header */}
         <div className="mb-16 md:mb-24 text-left max-w-3xl">
-          <div className="inline-flex items-center space-x-1.5 text-[#00C853] font-mono text-[9px] tracking-[0.25em] uppercase mb-4 font-bold">
-            <Sparkles className="w-3.5 h-3.5 text-[#00C853]" />
+          <div className="inline-flex items-center space-x-1.5 text-[#7B52EE] font-mono text-[9px] tracking-[0.25em] uppercase mb-4 font-bold">
+            <Sparkles className="w-3.5 h-3.5 text-[#7B52EE]" />
             <span>THE SANCTUARY HERITAGE</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-black leading-none tracking-tight">
-            Zimbabwean Craftsmanship, <span className="text-[#00C853] italic">Uncompromised</span> Living.
+            Zimbabwean Craftsmanship, <span className="text-[#7B52EE] italic">Uncompromised</span> Living.
           </h2>
           <p className="mt-6 text-[#5F5E6B] font-sans text-sm leading-relaxed max-w-2xl font-light">
             We designed Liam Victoria Falls to transcend the ordinary. Our estate balances the meticulous standards of a custom luxury retreat with the pure, slow pace of private boutique hospitality. 
@@ -67,13 +67,13 @@ export default function About() {
                 className="w-full h-full object-cover opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
               />
               <div className="absolute bottom-5 left-5 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#E5E5E7]">
-                <span className="font-mono text-[8.5px] tracking-widest text-[#00C853] font-bold uppercase">Suite 01 Residence</span>
+                <span className="font-mono text-[8.5px] tracking-widest text-[#7B52EE] font-bold uppercase">Suite 01 Residence</span>
               </div>
             </div>
 
             {/* Solid Minimal Text highlight */}
             <div className="about-animate-card bg-white border border-[#E5E5E7] p-10 rounded-[28px] hover:shadow-md duration-300">
-              <span className="font-serif text-5xl font-black text-[#00C853] leading-none block">8</span>
+              <span className="font-serif text-5xl font-black text-[#7B52EE] leading-none block">8</span>
               <h4 className="font-serif text-black font-semibold text-sm mt-3 uppercase tracking-wider">Independent Apartments</h4>
               <p className="text-xs font-sans text-[#5F5E6B] mt-3 leading-relaxed font-light">
                 By intentionally limiting our estate capacity, we completely preserve your peacefulness. Enjoy slow mornings on a calm pool deck, entirely void of crowded public hotel lobbies.
@@ -88,7 +88,7 @@ export default function About() {
             {/* Editorial Content Text and Pillars */}
             <div className="about-animate-card space-y-8 bg-white border border-[#E5E5E7] p-10 md:p-12 rounded-[28px] h-full flex flex-col justify-center">
               
-              <blockquote className="border-l-2 border-[#00C853] pl-5 italic text-[#5F5E6B] font-serif text-base sm:text-lg leading-relaxed">
+              <blockquote className="border-l-2 border-[#7B52EE] pl-5 italic text-[#5F5E6B] font-serif text-base sm:text-lg leading-relaxed">
                 "We provide an elite private haven of only eight fully climate-controlled suites, combining rigorous five-star services, high-spec work spaces, and personal itinerary curation."
               </blockquote>
               
@@ -99,8 +99,8 @@ export default function About() {
               {/* Core Pillars */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8 border-t border-[#E5E5E7]/60 font-mono text-[10px] tracking-widest uppercase">
                 <div className="flex items-start space-x-3.5">
-                  <div className="h-5 w-5 mt-0.5 rounded-full border border-[#00C853] flex items-center justify-center shrink-0">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00C853]"></span>
+                  <div className="h-5 w-5 mt-0.5 rounded-full border border-[#7B52EE] flex items-center justify-center shrink-0">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#7B52EE]"></span>
                   </div>
                   <div>
                     <h5 className="font-bold text-black">Private Butler Service</h5>
@@ -109,8 +109,8 @@ export default function About() {
                 </div>
 
                 <div className="flex items-start space-x-3.5">
-                  <div className="h-5 w-5 mt-0.5 rounded-full border border-[#00C853] flex items-center justify-center shrink-0">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00C853]"></span>
+                  <div className="h-5 w-5 mt-0.5 rounded-full border border-[#7B52EE] flex items-center justify-center shrink-0">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#7B52EE]"></span>
                   </div>
                   <div>
                     <h5 className="font-bold text-black">5-Min Falls Access</h5>
@@ -129,7 +129,7 @@ export default function About() {
                 className="w-full h-full object-cover opacity-95 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
               />
               <div className="absolute bottom-5 right-5 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#E5E5E7]">
-                <span className="font-mono text-[8.5px] tracking-widest text-[#00C853] font-bold uppercase">The Pool Oasis</span>
+                <span className="font-mono text-[8.5px] tracking-widest text-[#7B52EE] font-bold uppercase">The Pool Oasis</span>
               </div>
             </div>
 

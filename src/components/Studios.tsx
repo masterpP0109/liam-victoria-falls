@@ -6,7 +6,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { STUDIOS } from "../data";
 import { RoomStudio } from "../types";
-import { Bed, Users, Square, Check, ArrowRight, Eye, Sparkles, X, Shield } from "lucide-react";
+import { Bed, Users, Square, Check, ArrowRight, Eye, Sparkles, X, Shield, ChevronLeft, ChevronRight, Image as ImageIcon } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -20,163 +20,309 @@ interface StudiosProps {
 
 export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }: StudiosProps) {
   const [selectedRoom, setSelectedRoom] = useState<RoomStudio | null>(null);
-  const gridContainerRef = useRef<HTMLDivElement>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [activeImageIdx, setActiveImageIdx] = useState(0);
+  const galleryRef = useRef<HTMLDivElement>(null);
+
+  const displayedStudios = previewOnly ? STUDIOS.slice(0, 3) : STUDIOS;
 
   useEffect(() => {
-    const cards = gridContainerRef.current?.querySelectorAll(".studio-animate-card");
-    if (cards && cards.length > 0) {
+    // Reset active image index when active studio changes
+    setActiveImageIdx(0);
+  }, [activeIdx]);
+
+  useEffect(() => {
+    // Animate the main gallery panel on scroll/enter
+    if (galleryRef.current) {
       gsap.fromTo(
-        cards,
-        { opacity: 0, y: 35 },
+        galleryRef.current,
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
           duration: 0.85,
-          stagger: 0.12,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: gridContainerRef.current,
+            trigger: galleryRef.current,
             start: "top 80%",
             toggleActions: "play none none reverse",
           },
         }
       );
     }
-  }, [previewOnly]);
+  }, []);
 
   const handleBookSelect = (roomId: string) => {
     setSelectedRoom(null);
     onSelectRoom(roomId);
   };
 
-  const displayedStudios = previewOnly ? STUDIOS.slice(0, 3) : STUDIOS;
-
-  // Dynamic columns for genuine Bento-Grid orchestration
-  const getBentoClasses = (index: number) => {
-    if (previewOnly) {
-      if (index === 0) return "md:col-span-2 lg:col-span-8";
-      if (index === 1) return "md:col-span-1 lg:col-span-4";
-      return "md:col-span-2 lg:col-span-12";
-    }
-    // Full Page Layout (all 8 cards)
-    const pattern = index % 5;
-    if (pattern === 0) return "md:col-span-2 lg:col-span-8";
-    if (pattern === 1) return "md:col-span-1 lg:col-span-4";
-    if (pattern === 2) return "md:col-span-1 lg:col-span-4";
-    if (pattern === 3) return "md:col-span-1 lg:col-span-4";
-    return "md:col-span-1 lg:col-span-4";
+  const handlePrevStudio = () => {
+    setActiveIdx((prev) => (prev === 0 ? displayedStudios.length - 1 : prev - 1));
   };
+
+  const handleNextStudio = () => {
+    setActiveIdx((prev) => (prev === displayedStudios.length - 1 ? 0 : prev + 1));
+  };
+
+  const handlePrevImage = (e: React.MouseEvent, maxImages: number) => {
+    e.stopPropagation();
+    setActiveImageIdx((prev) => (prev === 0 ? maxImages - 1 : prev - 1));
+  };
+
+  const handleNextImage = (e: React.MouseEvent, maxImages: number) => {
+    e.stopPropagation();
+    setActiveImageIdx((prev) => (prev === maxImages - 1 ? 0 : prev + 1));
+  };
+
+  const currentStudio = displayedStudios[activeIdx] || displayedStudios[0];
+  const imagesCount = currentStudio.images.length;
 
   return (
     <section id="studios" className="py-28 bg-[#F5F5F5] relative border-t border-[#E5E5E7]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         
         {/* Module Header in HERITAGE style */}
-        <div className="max-w-3xl mb-24 text-left">
-          <div className="inline-flex items-center space-x-1.5 text-[#00C853] font-mono text-[9px] tracking-[0.25em] uppercase mb-4 font-bold">
-            <Sparkles className="h-3.5 w-3.5 text-[#00C853]" />
-            <span>EXQUISITE STUDIO SPECIFICATIONS</span>
+        <div className="max-w-3xl mb-16 text-left">
+          <div className="inline-flex items-center space-x-1.5 text-[#7B52EE] font-mono text-[9px] tracking-[0.25em] uppercase mb-4 font-bold">
+            <Sparkles className="h-3.5 w-3.5 text-[#7B52EE]" />
+            <span>INTERACTIVE RESIDENCES GALLERY</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-black tracking-tight leading-none">
-            The Eight Studio <span className="text-[#00C853] italic">Residences</span>.
+            The Eight Studio <span className="text-[#7B52EE] italic font-normal">Residences</span>.
           </h2>
           <p className="mt-5 text-[#5F5E6B] font-sans text-sm sm:text-base leading-relaxed max-w-2xl font-light">
-            Each sanctuary is individually crafted with local teak and rosewood hardwoods, fully integrated dual-zone whisper climate portals, cast-concrete ensuite wetrooms, and deep-set private decks looking out to the forest canopy.
+            An exquisite visual lookbook of our premium guest suites. Explore architecture crafted from local teak hardwoods, integrated climate portals, cast-concrete wetrooms, and deep private observation decks.
           </p>
         </div>
 
-        {/* List of 8 Studios Bento Grid with true asymmetrical rhythm */}
-        <div ref={gridContainerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
-          {displayedStudios.map((studio, idx) => {
-            const bentoSpan = getBentoClasses(idx);
+        {/* Master Interactive Gallery Block */}
+        <div ref={galleryRef} className="space-y-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            {/* LARGE MEDIA VIEWPORT (7 Cols) */}
+            <div className="lg:col-span-7 bg-white rounded-[32px] border border-[#E5E5E7] p-4 flex flex-col justify-between shadow-xl min-h-[480px] relative overflow-hidden group">
+              <div className="relative flex-1 rounded-[24px] overflow-hidden bg-[#F5F5F5] shadow-inner font-mono">
+                {/* Main Active Image */}
+                <img
+                  src={currentStudio.images[activeImageIdx]}
+                  alt={currentStudio.name}
+                  className="w-full h-full object-cover absolute inset-0 transition-all duration-700 ease-out group-hover:scale-105"
+                />
 
-            return (
-              <article
-                key={studio.id}
-                className={`studio-animate-card bg-white rounded-[28px] overflow-hidden border border-[#E5E5E7] group transition-all duration-500 hover:scale-[1.01] hover:shadow-xl hover:border-[#00C853]/40 flex flex-col h-full ${bentoSpan}`}
-              >
-                {/* Image Container */}
-                <div className="relative h-72 overflow-hidden bg-[#F5F5F5]">
-                  <img
-                    src={studio.images[0]}
-                    alt={studio.name}
-                    className="w-full h-full object-cover opacity-95 group-hover:scale-105 transition-all duration-700"
-                  />
+                {/* Sub-image Dot Navigation Overlays */}
+                {imagesCount > 1 && (
+                  <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full flex items-center space-x-2 z-20 border border-white/10 transition-all">
+                    {currentStudio.images.map((_, dotIdx) => (
+                      <button
+                        key={dotIdx}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActiveImageIdx(dotIdx);
+                        }}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          dotIdx === activeImageIdx ? "w-4 bg-white" : "w-1.5 bg-white/50 hover:bg-white"
+                        }`}
+                        aria-label={`Photo slide ${dotIdx + 1}`}
+                      />
+                    ))}
+                  </div>
+                )}
+
+                {/* Left/Right Inner Image Navigation triggers */}
+                {imagesCount > 1 && (
+                  <>
+                    <button
+                      onClick={(e) => handlePrevImage(e, imagesCount)}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/95 hover:bg-[#7B52EE] text-black hover:text-white border border-[#E5E5E7] flex items-center justify-center shadow-lg transition-all cursor-pointer opacity-0 group-hover:opacity-100 z-20 hover:scale-105 active:scale-95"
+                      aria-label="Previous room photo"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button
+                      onClick={(e) => handleNextImage(e, imagesCount)}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/95 hover:bg-[#7B52EE] text-black hover:text-white border border-[#E5E5E7] flex items-center justify-center shadow-lg transition-all cursor-pointer opacity-0 group-hover:opacity-100 z-20 hover:scale-105 active:scale-95"
+                      aria-label="Next room photo"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                  </>
+                )}
+
+                {/* Image counter and index pill */}
+                <div className="absolute top-4 left-4 bg-black/65 backdrop-blur-md px-4 py-2 rounded-full font-mono text-[9px] text-[#E5E5E7] tracking-widest uppercase font-bold border border-white/10 flex items-center space-x-2">
+                  <ImageIcon className="h-3.5 w-3.5 text-[#7B52EE]" />
+                  <span>STUDIO 0{activeIdx + 1} &bull; COMPILATION {activeImageIdx + 1} OF {imagesCount}</span>
+                </div>
+
+                {/* Corner Price Badge */}
+                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md border border-[#E5E5E7] px-4.5 py-2 rounded-full shadow-lg font-mono text-xs font-bold text-[#7B52EE]">
+                  ${currentStudio.basePriceNightUSD} <span className="text-[#5F5E6B] font-normal text-[9px]">/ night</span>
+                </div>
+              </div>
+            </div>
+
+            {/* INTEGRATED SPECIFICATIONS SIDE PANEL (5 Cols) */}
+            <div className="lg:col-span-5 bg-white rounded-[32px] border border-[#E5E5E7] p-8 flex flex-col justify-between shadow-xl text-left">
+              <div className="space-y-6">
+                
+                {/* Category indicator & Selector paging triggers */}
+                <div className="flex items-center justify-between border-b border-[#F5F5F5] pb-4">
+                  <span className="font-mono text-[9px] tracking-[0.2em] text-[#7B52EE] uppercase font-semibold">
+                    RESIDENCE INVENTORY SPECIFICATION
+                  </span>
                   
-                  {/* Price Tag Overlay */}
-                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md border border-[#E5E5E7] px-4 py-1.5 rounded-full shadow-sm font-mono text-xs font-bold text-[#00C853]">
-                    ${studio.basePriceNightUSD} <span className="text-[#5F5E6B] font-normal text-[9px]">/ night</span>
-                  </div>
-
-                  {/* Capacity Overlays */}
-                  <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full text-[9px] font-mono text-black flex items-center space-x-2.5 border border-[#E5E5E7]">
-                    <span className="flex items-center space-x-1">
-                      <Users className="h-3.5 w-3.5 text-[#00C853]" />
-                      <span>{studio.capacity.adults} Guests</span>
+                  <div className="flex items-center space-x-1.5">
+                    <button
+                      onClick={handlePrevStudio}
+                      className="h-8 w-8 rounded-full border border-[#E5E5E7] bg-white hover:bg-[#F5F5F5] flex items-center justify-center text-[#5F5E6B] hover:text-[#7B52EE] transition-all cursor-pointer hover:border-[#7B52EE]"
+                      title="Previous suite"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
+                    <span className="font-mono text-[10px] text-black font-semibold">
+                      0{activeIdx + 1} / 0{displayedStudios.length}
                     </span>
-                    <span className="text-[#E5E5E7]">|</span>
-                    <span className="flex items-center space-x-1">
-                      <Bed className="h-3.5 w-3.5 text-[#00C853]" />
-                      <span>{studio.capacity.children > 0 ? "Extended Suite" : "King Setup"}</span>
-                    </span>
+                    <button
+                      onClick={handleNextStudio}
+                      className="h-8 w-8 rounded-full border border-[#E5E5E7] bg-white hover:bg-[#F5F5F5] flex items-center justify-center text-[#5F5E6B] hover:text-[#7B52EE] transition-all cursor-pointer hover:border-[#7B52EE]"
+                      title="Next suite"
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
                   </div>
                 </div>
 
-                {/* Card Body */}
-                <div className="p-8 flex-1 flex flex-col justify-between text-left">
-                  <div className="space-y-4">
-                    <header className="space-y-2">
-                      <h3 className="font-serif font-black text-xl text-[#111111] group-hover:text-[#00C853] group-hover:underline decoration-1 underline-offset-4 transition-all">
-                        {studio.name}
-                      </h3>
-                      <p className="text-[10px] font-mono text-[#00C853] uppercase tracking-widest font-semibold">{studio.tagline}</p>
-                    </header>
-                    
-                    <p className="text-xs text-[#5F5E6B] font-sans leading-relaxed line-clamp-3 font-light">
-                      {studio.description}
-                    </p>
+                {/* Primary room naming header */}
+                <div className="space-y-2">
+                  <h3 className="font-serif text-2xl font-black text-[#111111] tracking-tight">
+                    {currentStudio.name}
+                  </h3>
+                  <p className="text-[10px] font-mono text-[#7B52EE] uppercase tracking-widest font-semibold">
+                    {currentStudio.tagline}
+                  </p>
+                </div>
 
-                    {/* Highlights section with bullet points */}
-                    <div className="py-4 border-t border-b border-[#E5E5E7]/80 grid grid-cols-1 gap-2.5 text-[9.5px] font-mono text-[#5F5E6B] uppercase tracking-widest">
-                      {studio.highlights.map((hlt, i) => (
-                        <div key={i} className="flex items-center space-x-2">
-                           <span className="h-1.5 w-1.5 bg-[#00C853] rounded-full shrink-0"></span>
-                          <span>{hlt}</span>
-                        </div>
-                      ))}
+                {/* Description */}
+                <p className="text-xs text-[#5F5E6B] font-sans leading-relaxed font-light">
+                  {currentStudio.description}
+                </p>
+
+                {/* Room specifications Grid metrics */}
+                <div className="grid grid-cols-2 gap-3.5 py-4 px-4 bg-[#F5F5F5] border border-[#E5E5E7] rounded-2xl">
+                  <div className="text-left">
+                    <span className="text-[#5F5E6B] font-mono text-[8px] uppercase tracking-widest block font-bold">Footprint Size</span>
+                    <span className="text-[11px] font-mono text-black font-semibold mt-0.5 block">{currentStudio.sizeSquareMeters} Sq Meters</span>
+                  </div>
+                  <div className="text-left">
+                    <span className="text-[#5F5E6B] font-mono text-[8px] uppercase tracking-widest block font-bold">Standard Bedding</span>
+                    <span className="text-[11px] font-sans text-black font-light mt-0.5 block">{currentStudio.bedType || "King Bed Setup"}</span>
+                  </div>
+                  <div className="text-left">
+                    <span className="text-[#5F5E6B] font-mono text-[8px] uppercase tracking-widest block font-bold">Optimal Guest Max</span>
+                    <span className="text-[11px] font-sans text-black font-light mt-0.5 block">{currentStudio.capacity.adults} Adults {currentStudio.capacity.children > 0 ? `& ${currentStudio.capacity.children} Child` : ""}</span>
+                  </div>
+                  <div className="text-left">
+                    <span className="text-[#5F5E6B] font-mono text-[8px] uppercase tracking-widest block font-bold">Estimated Rate</span>
+                    <span className="text-[11px] font-mono text-[#7B52EE] font-bold mt-0.5 block">${currentStudio.basePriceNightUSD} / night</span>
+                  </div>
+                </div>
+
+                {/* Bullet attributes */}
+                <div className="space-y-2 pt-2 border-t border-[#F5F5F5]">
+                  <span className="font-mono text-[8px] uppercase tracking-widest text-[#5F5E6B] font-bold block">
+                    SANCTUARY HIGHLIGHTS
+                  </span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[9.5px] font-mono text-[#5F5E6B] uppercase tracking-widest">
+                    {currentStudio.highlights.map((hlt, i) => (
+                      <div key={i} className="flex items-center space-x-2">
+                        <span className="h-1.5 w-1.5 bg-[#7B52EE] rounded-full shrink-0"></span>
+                        <span className="truncate">{hlt}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Action Operations Tray */}
+              <div className="mt-8 pt-6 border-t border-[#F5F5F5] flex items-center justify-between gap-4">
+                <button
+                  onClick={() => setSelectedRoom(currentStudio)}
+                  className="px-5 py-3 rounded-full bg-white border border-[#E5E5E7] hover:border-[#7B52EE]/40 text-black hover:text-[#7B52EE] hover:bg-[#F5F2FF] transition-all text-[9.5px] font-mono tracking-widest flex items-center space-x-1.5 cursor-pointer shrink-0 font-bold"
+                >
+                  <Eye className="h-3.5 w-3.5 text-[#7B52EE]" />
+                  <span>SPECS & AMENITIES</span>
+                </button>
+
+                <button
+                  onClick={() => handleBookSelect(currentStudio.id)}
+                  className="flex-1 py-3 bg-[#7B52EE] hover:bg-[#5E27EA] text-white font-mono text-[9.5px] tracking-widest font-bold rounded-full transition-all active:scale-95 flex items-center justify-center space-x-1.5 shadow-md cursor-pointer"
+                >
+                  <span>PLAN THIS STUDIO</span>
+                  <ArrowRight className="h-3.5 w-3.5 text-white" />
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* HORIZONTAL CAROUSEL FILMSTRIP (All 8 Studios) */}
+          <div className="bg-white border border-[#E5E5E7] rounded-[24px] p-4 shadow-inner">
+            <span className="font-mono text-[8px] tracking-[0.2em] text-[#5F5E6B] uppercase font-bold block mb-3.5 text-left border-b border-[#F5F5F5] pb-2 px-1">
+              SELECT FROM THE PORTFOLIO &bull; ALL RESIDENCES
+            </span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
+              {displayedStudios.map((studio, idx) => {
+                const isActive = idx === activeIdx;
+                return (
+                  <button
+                    key={studio.id}
+                    onClick={() => setActiveIdx(idx)}
+                    className={`group relative text-left rounded-xl overflow-hidden border p-2 transition-all cursor-pointer h-24 sm:h-28 flex flex-col justify-between ${
+                      isActive 
+                        ? "border-[#7B52EE] bg-[#F5F2FF]/80 shadow-md ring-1 ring-[#7B52EE]/30" 
+                        : "border-[#E5E5E7] bg-white hover:border-[#7B52EE]/50 hover:bg-[#F5F5F5]"
+                    }`}
+                  >
+                    {/* Micro Thumbnail */}
+                    <div className="relative h-12 w-full rounded-md overflow-hidden bg-neutral-100 shadow-sm col-span-2">
+                      <img
+                        src={studio.images[0]}
+                        alt={studio.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                      />
+                      <span className="absolute bottom-1 left-1.5 bg-black/60 text-white font-mono text-[8px] font-bold px-1 rounded">
+                        0{idx + 1}
+                      </span>
                     </div>
-                  </div>
 
-                  {/* Card Action Row */}
-                  <div className="mt-8 flex items-center justify-between space-x-4 pt-4 border-t border-[#F5F5F5]">
-                    <button
-                      onClick={() => setSelectedRoom(studio)}
-                      className="px-5 py-2.5 rounded-full bg-white border border-[#E5E5E7] hover:border-[#00C853]/50 text-black hover:text-[#00C853] hover:bg-[#F5F5F5] transition-all text-[9.5px] font-mono tracking-widest flex items-center space-x-1.5 cursor-pointer shrink-0 font-bold"
-                    >
-                      <Eye className="h-3.5 w-3.5 text-[#00C853]" />
-                      <span>SPECS</span>
-                    </button>
+                    {/* Micro Header title */}
+                    <div className="space-y-0.5 truncate w-full">
+                      <span className={`block font-serif text-[10px] truncate leading-tight font-black ${
+                        isActive ? "text-[#7B52EE]" : "text-black"
+                      }`}>
+                        {studio.name.replace("The ", "").replace(" Sanctuary", "").replace(" Premium", " Premium Suite").replace(" Studio", " Room")}
+                      </span>
+                      <span className="block font-mono text-[8px] text-[#5F5E6B] uppercase">
+                        ${studio.basePriceNightUSD} / nt
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
-                    <button
-                      onClick={() => handleBookSelect(studio.id)}
-                      className="flex-1 py-2.5 bg-[#00C853] hover:bg-[#00C853]/90 text-white font-mono text-[9.5px] tracking-widest font-bold rounded-full transition-all active:scale-95 flex items-center justify-center space-x-1.5 shadow-sm cursor-pointer"
-                    >
-                      <span>PLAN STAY</span>
-                      <ArrowRight className="h-3.5 w-3.5 text-white" />
-                    </button>
-                  </div>
-                </div>
-              </article>
-            );
-          })}
         </div>
 
         {/* Exclusive Studio Specifications Overlay Modal */}
         {selectedRoom && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in">
-            <div className="bg-white border border-[#E5E5E7] rounded-[32px] max-w-2xl w-full overflow-hidden shadow-2xl">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/65 backdrop-blur-md animate-fade-in text-black font-sans">
+            <div className="bg-white border border-[#E5E5E7] rounded-[32px] max-w-2xl w-full overflow-hidden shadow-2xl relative">
               {/* Modal header */}
-              <div className="relative h-64 bg-[#F5F5F5]">
+              <div className="relative h-64 bg-[#F5F5F5] font-mono">
                 <img
                   src={selectedRoom.images[0]}
                   alt={selectedRoom.name}
@@ -184,14 +330,15 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
                 />
                 <button
                   onClick={() => setSelectedRoom(null)}
-                   className="absolute top-5 right-5 p-2.5 bg-white hover:bg-neutral-100 text-black rounded-full border border-[#E5E5E7] shadow-md flex items-center justify-center z-10 cursor-pointer"
+                  className="absolute top-5 right-5 p-2.5 bg-white hover:bg-[#F5F2FF] text-black hover:text-[#7B52EE] rounded-full border border-[#E5E5E7] shadow-md flex items-center justify-center z-10 cursor-pointer transition-all active:scale-95 duration-150"
+                  aria-label="Close details"
                 >
-                  <X className="h-4.5 w-4.5" />
+                  <X className="h-4 w-4" />
                 </button>
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/5 to-transparent"></div>
                 <div className="absolute bottom-5 left-8 text-left">
                   <h3 className="font-serif text-2xl font-black text-[#111111] leading-none">{selectedRoom.name}</h3>
-                  <p className="text-[10px] font-mono text-[#00C853] tracking-wider uppercase mt-1.5 font-bold">{selectedRoom.tagline}</p>
+                  <p className="text-[10px] font-mono text-[#7B52EE] tracking-wider uppercase mt-1.5 font-bold">{selectedRoom.tagline}</p>
                 </div>
               </div>
 
@@ -199,16 +346,16 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
               <div className="p-8 md:p-10 space-y-6 max-h-[50vh] overflow-y-auto custom-scrollbar text-[#111111] text-left">
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 py-4 px-5 bg-[#F5F5F5] rounded-[18px] border border-[#E5E5E7] font-mono text-[10px] text-[#5F5E6B]">
                   <div>
-                    <span className="text-[#00C853] block mb-0.5 uppercase tracking-wider font-bold">ESTIMATED RATE</span>
-                    <strong className="text-[#00C853] font-bold text-xs">${selectedRoom.basePriceNightUSD} / night</strong>
+                    <span className="text-[#7B52EE] block mb-0.5 uppercase tracking-wider font-bold">ESTIMATED RATE</span>
+                    <strong className="text-[#7B52EE] font-bold text-xs">${selectedRoom.basePriceNightUSD} / night</strong>
                   </div>
                   <div>
-                    <span className="text-[#00C853] block mb-0.5 uppercase tracking-wider font-bold">SIZE FOOTPRINT</span>
+                    <span className="text-[#7B52EE] block mb-0.5 uppercase tracking-wider font-bold">SIZE FOOTPRINT</span>
                     <strong className="text-[#111111] font-semibold text-xs">{selectedRoom.sizeSquareMeters} m²</strong>
                   </div>
                   <div>
-                    <span className="text-[#00C853] block mb-0.5 uppercase tracking-wider font-bold">BEDDING TYPE</span>
-                    <strong className="text-[#111111] font-semibold text-xs">King Custom Ortho</strong>
+                    <span className="text-[#7B52EE] block mb-0.5 uppercase tracking-wider font-bold">BEDDING TYPE</span>
+                    <strong className="text-[#111111] font-semibold text-xs">{selectedRoom.bedType || "King Bed Setup"}</strong>
                   </div>
                 </div>
 
@@ -223,13 +370,13 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
 
                 {/* Full Premium Amenity list for the Room */}
                 <div className="space-y-3">
-                  <h4 className="font-serif text-[#00C853] text-xs font-bold tracking-widest uppercase">
+                  <h4 className="font-serif text-[#7B52EE] text-xs font-bold tracking-widest uppercase">
                     Included Amenities
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-sans text-[#5F5E6B]">
                     {selectedRoom.amenities.map((am, idx) => (
                       <div key={idx} className="flex items-center space-x-2 bg-white border border-[#E5E5E7] p-2 rounded-xl">
-                        <Check className="h-3.5 w-3.5 text-[#00C853] shrink-0" />
+                        <Check className="h-3.5 w-3.5 text-[#7B52EE] shrink-0" />
                         <span className="font-light">{am}</span>
                       </div>
                     ))}
@@ -237,8 +384,8 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
                 </div>
 
                 {/* Security Guarantee banner */}
-                <div className="p-3.5 bg-[#F5F5F5] border border-[#E5E5E7] rounded-xl text-[9px] font-mono text-[#00C853] tracking-widest uppercase flex items-center space-x-3 font-bold">
-                  <Shield className="h-4 w-4 text-[#00C853] shrink-0" />
+                <div className="p-3.5 bg-[#F5F5F5] border border-[#E5E5E7] rounded-xl text-[9px] font-mono text-[#7B52EE] tracking-widest uppercase flex items-center space-x-3 font-bold">
+                  <Shield className="h-4 w-4 text-[#7B52EE] shrink-0" />
                   <span>PRE-ENTRY SANITIZED • BIOMETRIC DOOR ACCESS • PRIVATE MINI-BAR</span>
                 </div>
               </div>
@@ -253,7 +400,7 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
                 </button>
                 <button
                   onClick={() => handleBookSelect(selectedRoom.id)}
-                  className="px-6 py-2.5 bg-[#00C853] hover:bg-[#00C853]/90 text-white font-mono text-[9.5px] tracking-widest font-bold rounded-full shadow-sm cursor-pointer"
+                  className="px-6 py-2.5 bg-[#7B52EE] hover:bg-[#5E27EA] text-white font-mono text-[9.5px] tracking-widest font-bold rounded-full shadow-sm cursor-pointer"
                 >
                   PLAN THIS STUDIO
                 </button>
@@ -264,13 +411,13 @@ export default function Studios({ onSelectRoom, previewOnly = false, onViewAll }
 
         {/* Interactive View More trigger under Bento layout */}
         {previewOnly && (
-          <div className="mt-24 text-center relative z-20 font-mono">
+          <div className="mt-16 text-center relative z-20 font-mono">
             <button
               onClick={onViewAll}
-              className="px-8 py-4 bg-white hover:bg-[#00C853] text-[#00C853] hover:text-white border border-[#00C853]/40 hover:border-[#00C853] rounded-full font-mono text-[9.5px] tracking-[0.25em] font-bold uppercase transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-md flex items-center justify-center space-x-3.5 mx-auto cursor-pointer"
+              className="px-8 py-4 bg-white hover:bg-[#7B52EE] text-[#7B52EE] hover:text-white border border-[#7B52EE]/40 hover:border-[#7B52EE] rounded-full font-mono text-[9.5px] tracking-[0.25em] font-bold uppercase transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-md flex items-center justify-center space-x-3.5 mx-auto cursor-pointer"
             >
               <span>DISCOVER ALL 8 RESIDENCES</span>
-              <ArrowRight className="h-4 w-4 shrink-0 animate-pulse" />
+              <ArrowRight className="h-4 w-4 shrink-0" />
             </button>
           </div>
         )}

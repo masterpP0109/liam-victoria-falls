@@ -20,6 +20,7 @@ import Testimonials from "./components/Testimonials";
 import StayPlanner from "./components/StayPlanner";
 import ReservationsPortal from "./components/ReservationsPortal";
 import FloatingConcierge from "./components/FloatingConcierge";
+import PainPoints from "./components/PainPoints";
 import { PlannerState, ItineraryFeedback, InquiryLead } from "./types";
 import { 
   BarChart3, 
@@ -176,7 +177,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-white min-h-screen text-[#111111] selection:bg-[#6D28D9] selection:text-white">
+    <div className="bg-white min-h-screen text-[#111111] selection:bg-[#7B52EE] selection:text-white">
       
       {/* 24/7 Sticky Luxury Navbar */}
       <Navbar 
@@ -202,6 +203,7 @@ export default function App() {
               previewOnly={true} 
               onViewAll={() => { setPage("studios"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
             />
+            <PainPoints />
             <Amenities />
             <Experiences 
               onSelectExperience={handleToggleExperienceOnGrid}
@@ -217,7 +219,7 @@ export default function App() {
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-6 text-left">
               <button 
                 onClick={() => { setPage("home"); setTimeout(() => document.getElementById("studios")?.scrollIntoView({ behavior: "smooth" }), 100); }}
-                className="inline-flex items-center space-x-2 text-xs font-mono tracking-widest text-[#4C248C] hover:underline font-bold uppercase cursor-pointer"
+                className="inline-flex items-center space-x-2 text-xs font-mono tracking-widest text-[#7B52EE] hover:underline font-bold uppercase cursor-pointer"
               >
                 <span>← BACK TO MAIN OVERVIEW</span>
               </button>
@@ -229,7 +231,7 @@ export default function App() {
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-6 text-left">
               <button 
                 onClick={() => { setPage("home"); setTimeout(() => document.getElementById("experiences")?.scrollIntoView({ behavior: "smooth" }), 100); }}
-                className="inline-flex items-center space-x-2 text-xs font-mono tracking-widest text-[#4C248C] hover:underline font-bold uppercase cursor-pointer"
+                className="inline-flex items-center space-x-2 text-xs font-mono tracking-widest text-[#7B52EE] hover:underline font-bold uppercase cursor-pointer"
               >
                 <span>← BACK TO MAIN OVERVIEW</span>
               </button>
@@ -264,11 +266,11 @@ export default function App() {
           {/* Column A: Corporate Disclaimer & Brand Story */}
           <div className="lg:col-span-5 space-y-6">
             <div className="flex flex-col items-start space-y-3">
-              <div className="bg-[#111111] border border-[#6D28D9]/20 text-white rounded-md px-3.5 py-1.5 font-sans flex flex-col items-center justify-center leading-none tracking-widest shrink-0 select-none">
+              <div className="bg-[#111111] border border-[#7B52EE]/20 text-white rounded-md px-3.5 py-1.5 font-sans flex flex-col items-center justify-center leading-none tracking-widest shrink-0 select-none">
                 <span className="font-sans font-black text-xs block leading-none tracking-tight">
                   @LIAM
                 </span>
-                <span className="text-[6.5px] font-sans font-bold tracking-[0.12em] text-[#6D28D9] block uppercase leading-none mt-1">
+                <span className="text-[6.5px] font-sans font-bold tracking-[0.12em] text-[#7B52EE] block uppercase leading-none mt-1">
                   Victoria Falls
                 </span>
               </div>
@@ -277,8 +279,8 @@ export default function App() {
             <p className="text-[11px] leading-relaxed text-[#5F5E6B] max-w-sm font-light">
               An officially classified 5-star boutique bed & breakfast in Victoria Falls, Zimbabwe. We preserve absolute seclusion with just eight individually hand-crafted, air-conditioned studio residences, a private pool deck, and local safaris curated directly by our personal butler desk.
             </p>
-            <div className="text-[9.5px] font-mono text-[#6D28D9] tracking-wider uppercase font-bold flex items-center space-x-2">
-              <Award className="h-4 w-4 text-[#6D28D9] shrink-0" />
+            <div className="text-[9.5px] font-mono text-[#7B52EE] tracking-wider uppercase font-bold flex items-center space-x-2">
+              <Award className="h-4 w-4 text-[#7B52EE] shrink-0" />
               <span>OFFICIALLY CERTIFIED FIVE-STAR STANDARDS</span>
             </div>
           </div>
@@ -292,8 +294,8 @@ export default function App() {
               <p>
                 Planning your stay directly with our digital concierge grants you priority access to individual room setups, complimentary hot poolside breakfasts, and direct VIP shuttle tracking.
               </p>
-              <div className="flex items-center space-x-2 text-[#6D28D9] font-mono text-[9px] tracking-widest uppercase font-bold">
-                <ShieldCheck className="h-4 w-4 text-[#6D28D9] shrink-0" />
+              <div className="flex items-center space-x-2 text-[#7B52EE] font-mono text-[9px] tracking-widest uppercase font-bold">
+                <ShieldCheck className="h-4 w-4 text-[#7B52EE] shrink-0" />
                 <span>Secure Booking & Private Data Safe</span>
               </div>
             </div>
@@ -306,7 +308,7 @@ export default function App() {
             </h4>
             <div className="space-y-3.5 text-[11px] text-[#5F5E6B] font-mono leading-relaxed">
               <div className="flex items-start space-x-2 font-sans font-light">
-                <MapPin className="h-4 w-4 text-[#6D28D9] shrink-0 mt-0.5" />
+                <MapPin className="h-4 w-4 text-[#7B52EE] shrink-0 mt-0.5" />
                 <span>324 Oak Avenue, Rockview Heights, Victoria Falls, Zimbabwe</span>
               </div>
               <p className="border-t border-[#E5E5E7] pt-2.5">
@@ -325,10 +327,10 @@ export default function App() {
           <div className="text-left font-light">
             © {new Date().getFullYear()} Liam Victoria Falls Boutique Hotel. All rights reserved. Registered Zimbabwe Lodging Board #VF-832-5S.
           </div>
-          <div className="mt-4 sm:mt-0 flex items-center space-x-4 font-bold text-[#6D28D9]">
-            <span className="hover:text-[#6D28D9]/80 transition-colors cursor-pointer">PRIVACY POLICY</span>
+          <div className="mt-4 sm:mt-0 flex items-center space-x-4 font-bold text-[#7B52EE]">
+            <span className="hover:text-[#7B52EE]/80 transition-colors cursor-pointer">PRIVACY POLICY</span>
             <span>•</span>
-            <span className="hover:text-[#6D28D9]/80 transition-colors cursor-pointer">STAY TERMS</span>
+            <span className="hover:text-[#7B52EE]/80 transition-colors cursor-pointer">STAY TERMS</span>
           </div>
         </div>
       </footer>

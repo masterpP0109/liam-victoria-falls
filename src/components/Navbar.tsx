@@ -27,7 +27,7 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-        // GSAP sticky scroll micro-scale down contraction
+  // GSAP sticky scroll micro-scale down contraction
   useEffect(() => {
     if (navContainerRef.current) {
       gsap.to(navContainerRef.current, {
@@ -36,7 +36,7 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
         paddingLeft: scrolled ? "1.25rem" : "1.75rem",
         paddingRight: scrolled ? "1.25rem" : "1.75rem",
         backgroundColor: scrolled ? "rgba(255, 255, 255, 0.95)" : "rgba(255, 255, 255, 0.85)",
-        boxShadow: scrolled ? "0 10px 35px -10px rgba(76, 36, 140, 0.07), 0 1px 3px rgba(229, 229, 231, 0.4)" : "0 1px 2px rgba(0,0,0,0.01)",
+        boxShadow: scrolled ? "0 10px 35px -10px rgba(123, 82, 238, 0.07), 0 1px 3px rgba(229, 229, 231, 0.4)" : "0 1px 2px rgba(0,0,0,0.01)",
         duration: 0.4,
         ease: "power3.out",
       });
@@ -70,12 +70,12 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
           onClick={() => handleLinkClick("home")}
           id="nav-logo"
         >
-          <Compass className="h-4.5 w-4.5 text-[#4C248C] group-hover:rotate-45 transition-transform duration-500" />
+          <Compass className="h-4.5 w-4.5 text-[#7B52EE] group-hover:rotate-45 transition-transform duration-500" />
           <div className="flex flex-col text-left">
             <span className="font-serif tracking-[0.22em] text-black font-black text-xs leading-none">
               LIAM
             </span>
-            <span className="text-[7.5px] font-mono tracking-[0.2em] text-[#6D4EB3] uppercase leading-none mt-0.5 font-bold">
+            <span className="text-[7.5px] font-mono tracking-[0.2em] text-[#7B52EE] uppercase leading-none mt-0.5 font-bold">
               Victoria Falls
             </span>
           </div>
@@ -85,33 +85,33 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
         <nav className="hidden md:flex items-center space-x-7 font-mono text-[10px] tracking-widest text-[#5F5E6B] font-medium">
           <button
             onClick={() => handleLinkClick("home", "about")}
-            className={`hover:text-[#4C248C] hover:scale-105 active:scale-95 transition-all cursor-pointer font-bold ${
-              activePage === "home" ? "hover:text-[#4C248C]" : ""
+            className={`hover:text-[#7B52EE] hover:scale-105 active:scale-95 transition-all cursor-pointer font-bold ${
+              activePage === "home" ? "hover:text-[#7B52EE]" : ""
             }`}
           >
             ABOUT
           </button>
           <button
             onClick={() => handleLinkClick("home", "studios")}
-            className="hover:text-[#4C248C] hover:scale-105 active:scale-95 transition-all cursor-pointer font-bold"
+            className="hover:text-[#7B52EE] hover:scale-105 active:scale-95 transition-all cursor-pointer font-bold"
           >
             STUDIOS
           </button>
           <button
             onClick={() => handleLinkClick("home", "amenities")}
-            className="hover:text-[#4C248C] hover:scale-105 active:scale-95 transition-all cursor-pointer font-bold"
+            className="hover:text-[#7B52EE] hover:scale-105 active:scale-95 transition-all cursor-pointer font-bold"
           >
             AMENITIES
           </button>
           <button
             onClick={() => handleLinkClick("home", "experiences")}
-            className="hover:text-[#4C248C] hover:scale-105 active:scale-95 transition-all cursor-pointer font-bold"
+            className="hover:text-[#7B52EE] hover:scale-105 active:scale-95 transition-all cursor-pointer font-bold"
           >
             EXPERIENCES
           </button>
           <button
             onClick={() => handleLinkClick("home", "location")}
-            className="hover:text-[#4C248C] hover:scale-105 active:scale-95 transition-all cursor-pointer font-bold"
+            className="hover:text-[#7B52EE] hover:scale-105 active:scale-95 transition-all cursor-pointer font-bold"
           >
             LOCATION
           </button>
@@ -122,14 +122,14 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
             onClick={() => handleLinkClick("portal")}
             className={`relative flex items-center space-x-1.5 px-3 py-1 rounded-full border transition-all font-bold ${
               activePage === "portal"
-                ? "bg-[#4C248C]/10 text-[#4C248C] border-[#4C248C]/30"
-                : "border-transparent text-[#5F5E6B] hover:text-[#4C248C] hover:border-[#E5E5E7]"
+                ? "bg-[#7B52EE]/10 text-[#7B52EE] border-[#7B52EE]/30"
+                : "border-transparent text-[#5F5E6B] hover:text-[#7B52EE] hover:border-[#E5E5E7]"
             }`}
           >
-            <UserSquare2 className="h-3.5 w-3.5 text-[#6D4EB3]" />
+            <UserSquare2 className="h-3.5 w-3.5 text-[#7B52EE]" />
             <span>MY PLANS</span>
             {submittedInquiryCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-[#4C248C] text-white font-sans font-bold text-[8px] h-3.5 w-3.5 rounded-full flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 bg-[#7B52EE] text-white font-sans font-bold text-[8px] h-3.5 w-3.5 rounded-full flex items-center justify-center">
                 {submittedInquiryCount}
               </span>
             )}
@@ -144,8 +144,8 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
             onClick={() => handleLinkClick("planner")}
             className={`hidden md:flex font-mono tracking-widest text-[9.5px] font-bold px-4 py-2 rounded-full transition-all duration-300 items-center space-x-1.5 ${
               activePage === "planner"
-                ? "bg-[#4C248C]/10 text-[#4C248C] border border-[#4C248C]/20"
-                : "bg-[#4C248C] hover:bg-[#3B1C6E] text-white active:scale-95 shadow-sm"
+                ? "bg-[#7B52EE]/10 text-[#7B52EE] border border-[#7B52EE]/20"
+                : "bg-[#7B52EE] hover:bg-[#5E27EA] text-white active:scale-95 shadow-sm"
             }`}
           >
             <Calendar className="h-3 w-3 text-white" />
@@ -156,7 +156,7 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
           <button
             id="nav-mobile-hamburger"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 -mr-1.5 text-black hover:bg-[#4C248C]/5 rounded-full md:hidden flex items-center justify-center transition-colors"
+            className="p-2 -mr-1.5 text-black hover:bg-[#7B52EE]/5 rounded-full md:hidden flex items-center justify-center transition-colors shadow-none"
           >
             {mobileMenuOpen ? <X className="h-4.5 w-4.5" /> : <Menu className="h-4.5 w-4.5" />}
           </button>
@@ -169,31 +169,31 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
           <div className="flex flex-col space-y-2 font-mono text-[10px] tracking-widest text-[#5F5E6B] font-semibold">
             <button
               onClick={() => handleLinkClick("home", "about")}
-              className="text-left py-2.5 border-b border-[#E5E5E7]/40 hover:text-[#4C248C]"
+              className="text-left py-2.5 border-b border-[#E5E5E7]/40 hover:text-[#7B52EE]"
             >
               ABOUT HOTEL
             </button>
             <button
               onClick={() => handleLinkClick("home", "studios")}
-              className="text-left py-2.5 border-b border-[#E5E5E7]/40 hover:text-[#4C248C]"
+              className="text-left py-2.5 border-b border-[#E5E5E7]/40 hover:text-[#7B52EE]"
             >
               8 RESIDENCES
             </button>
             <button
               onClick={() => handleLinkClick("home", "amenities")}
-              className="text-left py-2.5 border-b border-[#E5E5E7]/40 hover:text-[#4C248C]"
+              className="text-left py-2.5 border-b border-[#E5E5E7]/40 hover:text-[#7B52EE]"
             >
               AMENITIES
             </button>
             <button
               onClick={() => handleLinkClick("home", "experiences")}
-              className="text-left py-2.5 border-b border-[#E5E5E7]/40 hover:text-[#4C248C]"
+              className="text-left py-2.5 border-b border-[#E5E5E7]/40 hover:text-[#7B52EE]"
             >
               EXPERIENCES
             </button>
             <button
               onClick={() => handleLinkClick("home", "location")}
-              className="text-left py-2.5 border-b border-[#E5E5E7]/40 hover:text-[#4C248C]"
+              className="text-left py-2.5 border-b border-[#E5E5E7]/40 hover:text-[#7B52EE]"
             >
               LOCATION MAP
             </button>
@@ -204,12 +204,12 @@ export default function Navbar({ onNavigate, activePage, submittedInquiryCount }
               onClick={() => handleLinkClick("portal")}
               className="w-full py-2.5 bg-white text-black border border-[#E5E5E7] rounded-full font-mono text-[9px] tracking-wider flex items-center justify-center space-x-1.5 shadow-sm"
             >
-              <UserSquare2 className="h-3.5 w-3.5 text-[#6D4EB3]" />
+              <UserSquare2 className="h-3.5 w-3.5 text-[#7B52EE]" />
               <span>CONCIERGE PORTAL ({submittedInquiryCount})</span>
             </button>
             <button
               onClick={() => handleLinkClick("planner")}
-              className="w-full py-3 bg-[#4C248C] hover:bg-[#3B1C6E] text-white font-mono text-[9.5px] font-bold tracking-widest rounded-full flex items-center justify-center space-x-1.5 shadow-md animate-pulse"
+              className="w-full py-3 bg-[#7B52EE] hover:bg-[#5E27EA] text-white font-mono text-[9.5px] font-bold tracking-widest rounded-full flex items-center justify-center space-x-1.5 shadow-md"
             >
               <Calendar className="h-3.5 w-3.5 text-white" />
               <span>BUILD MY STAY</span>

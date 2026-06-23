@@ -104,11 +104,11 @@ export default function Testimonials() {
         
         {/* Module Header in Heritage Style */}
         <div className="max-w-3xl mb-16 text-left">
-          <span className="inline-block text-[#6D4EB3] font-mono text-[9px] tracking-[0.25em] uppercase mb-4 font-bold flex items-center gap-1.5 font-mono">
+          <span className="inline-block text-[#7B52EE] font-mono text-[9px] tracking-[0.25em] uppercase mb-4 font-bold flex items-center gap-1.5 font-mono">
             <Trophy className="h-3.5 w-3.5" /> GUEST TESTIMONIALS & TRUSTED METRICS
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-[#111111] tracking-tight leading-none font-serif">
-            The Liam Legacy in <span className="text-[#4C248C] italic">Words</span>.
+            The Liam Legacy in <span className="text-[#7B52EE] italic">Words</span>.
           </h2>
         </div>
 
@@ -124,10 +124,10 @@ export default function Testimonials() {
             <div className="flex items-center space-x-1.5" id="testimonial-aspect-stars">
               <div className="flex -space-x-0.5">
                 {[...Array(activeReview.rating)].map((_, i) => (
-                  <Star key={i} className="h-4.5 w-4.5 text-[#6D4EB3] fill-[#6D4EB3] shrink-0" />
+                  <Star key={i} className="h-4.5 w-4.5 text-[#7B52EE] fill-[#7B52EE] shrink-0" />
                 ))}
               </div>
-              <span className="text-[8.5px] font-mono text-[#4C248C] bg-[#FAF9FD] border border-[#E5E5E7] px-3 py-1 rounded-full uppercase tracking-widest font-bold">
+              <span className="text-[8.5px] font-mono text-[#7B52EE] bg-[#FAF9FD] border border-[#E5E5E7] px-3 py-1 rounded-full uppercase tracking-widest font-bold">
                 ASPECT: {activeReview.aspect}
               </span>
             </div>
@@ -147,8 +147,8 @@ export default function Testimonials() {
               <div className="font-mono text-xs text-left sm:text-right flex items-center sm:justify-end space-x-3">
                 <div>
                   <span className="text-[#111111] font-semibold block text-[10px] tracking-wider uppercase font-mono">{activeReview.date}</span>
-                  <div className="text-[8.5px] text-[#00C853] font-bold uppercase tracking-widest flex items-center mt-1">
-                    <ShieldCheck className="h-4 w-4 text-[#00C853] mr-1 shrink-0" />
+                  <div className="text-[8.5px] text-[#7B52EE] font-bold uppercase tracking-widest flex items-center mt-1">
+                    <ShieldCheck className="h-4 w-4 text-[#7B52EE] mr-1 shrink-0" />
                     <span>VERIFIED GUEST STAY</span>
                   </div>
                 </div>
@@ -164,7 +164,7 @@ export default function Testimonials() {
                   key={idx}
                   onClick={() => handleReviewChange(idx)}
                   className={`h-1.5 rounded-full transition-all duration-300 ${
-                    idx === activeIdx ? "w-6 bg-[#00C853]" : "w-1.5 bg-[#E5E5E7] hover:bg-[#00C853]"
+                    idx === activeIdx ? "w-6 bg-[#7B52EE]" : "w-1.5 bg-[#E5E5E7] hover:bg-[#7B52EE]"
                   }`}
                   aria-label={`Slide ${idx + 1}`}
                 />
@@ -174,13 +174,13 @@ export default function Testimonials() {
             <div className="flex items-center space-x-2 w-full sm:w-auto justify-end">
               <button
                 onClick={handlePrev}
-                className="p-3 bg-white border border-[#E5E5E7] hover:border-[#00C853] text-[#00C853] hover:bg-[#F5F5F5] rounded-full transition-all cursor-pointer shadow-sm active:scale-95 flex items-center justify-center"
+                className="p-3 bg-white border border-[#E5E5E7] hover:border-[#7B52EE] text-[#7B52EE] hover:bg-[#F5F5F5] rounded-full transition-all cursor-pointer shadow-sm active:scale-95 flex items-center justify-center"
               >
                 <ChevronLeft className="h-4.5 w-4.5" />
               </button>
               <button
                 onClick={handleNext}
-                className="p-3 bg-white border border-[#E5E5E7] hover:border-[#00C853] text-[#00C853] hover:bg-[#F5F5F5] rounded-full transition-all cursor-pointer shadow-sm active:scale-95 flex items-center justify-center"
+                className="p-3 bg-white border border-[#E5E5E7] hover:border-[#7B52EE] text-[#7B52EE] hover:bg-[#F5F5F5] rounded-full transition-all cursor-pointer shadow-sm active:scale-95 flex items-center justify-center"
               >
                 <ChevronRight className="h-4.5 w-4.5" />
               </button>

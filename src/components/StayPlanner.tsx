@@ -594,7 +594,7 @@ export default function StayPlanner({ onPlanComplete, preSelectedRoomId }: StayP
                     <div className="pt-4 border-t border-[#E5E5E7] text-right">
                       <button
                         type="submit"
-                        className="px-8 py-4 bg-[#00C853] hover:bg-[#00C853]/90 text-white font-mono font-bold tracking-widest text-[9.5px] rounded-full shadow-sm active:scale-95 transition-all flex items-center space-x-2 ml-auto cursor-pointer"
+                        className="px-8 py-4 bg-[#7B52EE] hover:bg-[#7B52EE]/90 text-white font-mono font-bold tracking-widest text-[9.5px] rounded-full shadow-sm active:scale-95 transition-all flex items-center space-x-2 ml-auto cursor-pointer"
                       >
                         <Plane className="h-4 w-4 text-white" />
                         <span>COMPILE CUSTOM PLAN & DISPATCH AI</span>
@@ -610,7 +610,7 @@ export default function StayPlanner({ onPlanComplete, preSelectedRoomId }: StayP
                   {state.step > 1 ? (
                     <button
                       onClick={prevStep}
-                      className="px-5 py-2.5 font-mono text-[9.5px] font-bold tracking-widest text-[#5F5E6B] hover:text-[#00C853] flex items-center space-x-1 border border-[#E5E5E7] rounded-full bg-white shadow-sm cursor-pointer active:scale-95 duration-150"
+                      className="px-5 py-2.5 font-mono text-[9.5px] font-bold tracking-widest text-[#5F5E6B] hover:text-[#7B52EE] flex items-center space-x-1 border border-[#E5E5E7] rounded-full bg-white shadow-sm cursor-pointer active:scale-95 duration-150"
                     >
                       <ChevronLeft className="h-3.5 w-3.5" />
                       <span>PREVIOUS</span>
@@ -621,7 +621,7 @@ export default function StayPlanner({ onPlanComplete, preSelectedRoomId }: StayP
 
                   <button
                     onClick={nextStep}
-                    className="px-6 py-3 bg-[#00C853] hover:bg-[#00C853]/90 text-white font-mono font-bold text-[9.5px] tracking-widest rounded-full flex items-center space-x-1 shadow-sm cursor-pointer active:scale-95 transition-transform"
+                    className="px-6 py-3 bg-[#7B52EE] hover:bg-[#7B52EE]/90 text-white font-mono font-bold text-[9.5px] tracking-widest rounded-full flex items-center space-x-1 shadow-sm cursor-pointer active:scale-95 transition-transform"
                   >
                     <span>NEXT PROCEDURES</span>
                     <ChevronRight className="h-4 w-4" />
@@ -633,13 +633,13 @@ export default function StayPlanner({ onPlanComplete, preSelectedRoomId }: StayP
 
             {/* Right Box: Dynamic Paper-like Bill/Stay Summary ticket (5 cols) */}
             <aside className="lg:col-span-5 bg-[#F5F5F5] border border-[#E5E5E7] p-8 rounded-[36px] space-y-6 shadow-inner">
-              <span className="font-mono text-[9px] tracking-widest text-[#00C853] uppercase block border-b border-[#E5E5E7] pb-3.5 font-bold">
+              <span className="font-mono text-[9px] tracking-widest text-[#7B52EE] uppercase block border-b border-[#E5E5E7] pb-3.5 font-bold">
                 DYNAMIC RETREAT ESTIMATE
               </span>
 
               {/* Accommodation detail item */}
               <div className="space-y-3">
-                <span className="text-[9px] font-mono text-[#00C853] font-bold block uppercase tracking-wider">Accommodations</span>
+                <span className="text-[9px] font-mono text-[#7B52EE] font-bold block uppercase tracking-wider">Accommodations</span>
                 {state.roomPreference ? (
                   <div className="bg-white p-4 rounded-xl border border-[#E5E5E7] flex items-center justify-between shadow-sm">
                     <div>
@@ -654,7 +654,7 @@ export default function StayPlanner({ onPlanComplete, preSelectedRoomId }: StayP
                         {state.lengthOfStay} nights @ ${costs.nightlyRate} / night
                       </span>
                     </div>
-                    <span className="font-mono text-xs font-bold text-[#00C853] shrink-0">
+                    <span className="font-mono text-xs font-bold text-[#7B52EE] shrink-0">
                       ${costs.nightlySubtotal}
                     </span>
                   </div>
@@ -665,7 +665,7 @@ export default function StayPlanner({ onPlanComplete, preSelectedRoomId }: StayP
 
               {/* Excursions detail item */}
               <div className="space-y-3">
-                <span className="text-[9px] font-mono text-[#00C853] font-bold block uppercase tracking-wider">Safari Itineraries</span>
+                <span className="text-[9px] font-mono text-[#7B52EE] font-bold block uppercase tracking-wider">Safari Itineraries</span>
                 {state.experienceInterests.length > 0 ? (
                   <div className="space-y-1.5 max-h-[160px] overflow-y-auto pr-1 custom-scrollbar">
                     {state.experienceInterests.map((expId) => {
@@ -680,7 +680,7 @@ export default function StayPlanner({ onPlanComplete, preSelectedRoomId }: StayP
                               {travellersCount} Guests @ ${exp.priceUSD}/ea
                             </span>
                           </div>
-                          <span className="text-[#00C853] font-bold shrink-0">${exp.priceUSD * travellersCount}</span>
+                          <span className="text-[#7B52EE] font-bold shrink-0">${exp.priceUSD * travellersCount}</span>
                         </div>
                       );
                     })}
@@ -692,28 +692,28 @@ export default function StayPlanner({ onPlanComplete, preSelectedRoomId }: StayP
 
               {/* Addons summary */}
               <div className="space-y-2">
-                <span className="text-[9px] font-mono text-[#00C853] font-bold block uppercase tracking-wider">Services Custom</span>
+                <span className="text-[9px] font-mono text-[#7B52EE] font-bold block uppercase tracking-wider">Services Custom</span>
                 <div className="space-y-1 font-mono text-[10px]">
                   <div className="flex items-center justify-between py-1.5 border-b border-[#E5E5E7]">
                     <span className="text-[#5F5E6B]">Gourmet Bedroom Breakfast</span>
-                    <span className="text-[#00C853] uppercase text-[9px] font-bold">Free Benefit</span>
+                    <span className="text-[#7B52EE] uppercase text-[9px] font-bold">Free Benefit</span>
                   </div>
                   {state.guestPreferences.includes("airport-transfer") && (
                     <div className="flex items-center justify-between py-1.5 border-b border-[#E5E5E7]">
                       <span className="text-[#5F5E6B]">VIP Airport Transfer Shuttle</span>
-                      <span className="text-[#00C853] font-bold">+$75</span>
+                      <span className="text-[#7B52EE] font-bold">+$75</span>
                     </div>
                   )}
                   {state.guestPreferences.includes("honeymoon-turndown") && (
                     <div className="flex items-center justify-between py-1.5 border-b border-[#E5E5E7]">
                       <span className="text-[#5F5E6B]">Champagne Romance turn-down</span>
-                      <span className="text-[#00C853] font-bold">+$120</span>
+                      <span className="text-[#7B52EE] font-bold">+$120</span>
                     </div>
                   )}
                   {state.guestPreferences.includes("private-guide") && (
                     <div className="flex items-center justify-between py-1.5 border-b border-[#E5E5E7]">
                       <span className="text-[#5F5E6B]">Private Naturalist Guide ({state.lengthOfStay} days)</span>
-                      <span className="text-[#00C853] font-bold">+$ {150 * state.lengthOfStay}</span>
+                      <span className="text-[#7B52EE] font-bold">+$ {150 * state.lengthOfStay}</span>
                     </div>
                   )}
                 </div>
@@ -723,18 +723,18 @@ export default function StayPlanner({ onPlanComplete, preSelectedRoomId }: StayP
               <div className="bg-white p-6 rounded-2xl border border-[#E5E5E7] space-y-3.5 shadow-md">
                 <div className="flex items-center justify-between border-b border-[#E5E5E7] pb-3.5">
                   <span className="font-serif text-sm font-black text-black">Estimated Quote</span>
-                  <strong className="font-mono text-xl text-[#00C853] font-black">
+                  <strong className="font-mono text-xl text-[#7B52EE] font-black">
                     ${costs.totalEstimate}
                   </strong>
                 </div>
 
                 <div className="text-[9px] font-mono text-[#5F5E6B] leading-relaxed space-y-1.5 uppercase font-bold tracking-wider">
-                  <div className="flex items-center space-x-1.5 text-[#00C853]">
+                  <div className="flex items-center space-x-1.5 text-[#7B52EE]">
                     <CheckCircle className="h-3.5 w-3.5 shrink-0" />
                     <span>Bedside Breakfast Benefit Applied</span>
                   </div>
                   <div className="flex items-center space-x-1.5 font-mono">
-                    <Shield className="h-3.5 w-3.5 shrink-0 text-[#00C853]" />
+                    <Shield className="h-3.5 w-3.5 shrink-0 text-[#7B52EE]" />
                     <span>Secure 5-Star Stay Registration</span>
                   </div>
                 </div>

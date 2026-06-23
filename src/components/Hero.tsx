@@ -84,7 +84,7 @@ export default function Hero({ onStartPlanner, onExploreRooms }: HeroProps) {
       className="relative min-h-screen bg-white text-black flex flex-col justify-center overflow-hidden pt-32 pb-12"
     >
       {/* Decorative Custom Light Premium Ambient Backlighting */}
-      <div className="absolute top-1/4 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#F5F5F5] rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#F5F2FF] rounded-full blur-3xl opacity-50 pointer-events-none"></div>
       <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-[#FAF9F5] rounded-full blur-[120px] opacity-25 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center my-auto">
@@ -106,7 +106,7 @@ export default function Hero({ onStartPlanner, onExploreRooms }: HeroProps) {
               ))}
             </div>
             <span className="text-[9px] font-mono tracking-[0.2em] text-black/80 uppercase font-bold flex items-center gap-1">
-              <Sparkles className="w-3 h-3 text-[#00C853]" /> 9.0/10 WONDERFUL - EXPEDIA TOP RATING
+              <Sparkles className="w-3 h-3 text-[#7B52EE]" /> 9.0/10 WONDERFUL - EXPEDIA TOP RATING
             </span>
           </div>
 
@@ -115,7 +115,7 @@ export default function Hero({ onStartPlanner, onExploreRooms }: HeroProps) {
             ref={headlineRef}
             className="font-serif font-black tracking-tight text-[#111111] text-4xl sm:text-5xl md:text-6xl xl:text-[4.5rem] leading-[1.05] max-w-xl"
           >
-            Serenity by the <span className="text-[#00C853] italic">Smoke That Thunders</span>.
+            Serenity by the <span className="text-[#7B52EE] italic font-normal">Smoke That Thunders</span>.
           </h1>
 
           {/* Elegant supporting paragraph */}
@@ -134,7 +134,7 @@ export default function Hero({ onStartPlanner, onExploreRooms }: HeroProps) {
             <button
               id="hero-planner-cta"
               onClick={onStartPlanner}
-              className="px-8 py-4 bg-[#00C853] hover:bg-[#00C853]/90 text-white font-mono text-[10.5px] font-bold tracking-widest rounded-full transition-all duration-300 flex items-center justify-center space-x-2.5 active:scale-95 shadow-md hover:shadow-lg border border-[#00C853]/20 cursor-pointer"
+              className="px-8 py-4 bg-[#7B52EE] hover:bg-[#5E27EA] text-white font-mono text-[10.5px] font-bold tracking-widest rounded-full transition-all duration-300 flex items-center justify-center space-x-2.5 active:scale-95 shadow-md hover:shadow-lg border border-[#7B52EE]/20 cursor-pointer"
             >
               <span>BUILD MY STAY</span>
               <ArrowRight className="h-4 w-4 text-white" />
@@ -143,7 +143,7 @@ export default function Hero({ onStartPlanner, onExploreRooms }: HeroProps) {
             <button
               id="hero-explore-cta"
               onClick={onExploreRooms}
-              className="px-8 py-4 text-black hover:text-[#00C853] border border-[#E5E5E7] hover:border-[#00C853]/40 bg-white hover:bg-white rounded-full font-mono text-[10px] font-bold tracking-widest flex items-center justify-center space-x-1.5 transition-all duration-200 cursor-pointer"
+              className="px-8 py-4 text-black hover:text-[#7B52EE] border border-[#E5E5E7] hover:border-[#7B52EE]/40 bg-white hover:bg-[#F5F2FF] rounded-full font-mono text-[10px] font-bold tracking-widest flex items-center justify-center space-x-1.5 transition-all duration-200 cursor-pointer"
             >
               <span>EXPLORE STUDIOS</span>
             </button>
@@ -155,31 +155,31 @@ export default function Hero({ onStartPlanner, onExploreRooms }: HeroProps) {
             className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-[#E5E5E7] max-w-xl font-mono text-[9px] text-[#5F5E6B] tracking-widest uppercase"
           >
             <div className="flex items-center space-x-2.5">
-              <MapPin className="h-4 w-4 text-[#00C853] shrink-0" />
+              <MapPin className="h-4 w-4 text-[#7B52EE] shrink-0" />
               <div>
                 <span className="text-black font-bold block">5-MIN RIDE</span>
                 <span className="text-[7.5px] text-[#888888] tracking-normal">Direct Access</span>
               </div>
             </div>
             <div className="flex items-center space-x-2.5">
-              <Award className="h-4 w-4 text-[#00C853] shrink-0" />
+              <Award className="h-4 w-4 text-[#7B52EE] shrink-0" />
               <div>
                 <span className="text-black font-bold block">8 SANCTUARIES</span>
                 <span className="text-[7.5px] text-[#888888] tracking-normal">Exclusive privacy</span>
               </div>
             </div>
             <div className="flex items-center space-x-2.5">
-              <Shield className="h-4 w-4 text-[#00C853] shrink-0" />
+              <Shield className="h-4 w-4 text-[#7B52EE] shrink-0" />
               <div>
                 <span className="text-black font-bold block">24/7 SERVICE</span>
                 <span className="text-[7.5px] text-[#888888] tracking-normal">Peace of Mind</span>
               </div>
             </div>
             <div className="flex items-center space-x-2.5">
-              <Compass className="h-4 w-4 text-[#00C853] shrink-0" />
+              <Compass className="h-4 w-4 text-[#7B52EE] shrink-0" />
               <div>
                 <span className="text-black font-bold block">OASIS DECK</span>
-                <span className="text-[7.5px] text-[#888888] tracking-normal">Slate plunge pool</span>
+                <span className="text-[7.5px] text-[#888888] tracking-normal">Slate pool</span>
               </div>
             </div>
           </div>
@@ -229,7 +229,7 @@ export default function Hero({ onStartPlanner, onExploreRooms }: HeroProps) {
           <div className="gallery-item absolute bottom-16 left-4 bg-white/95 backdrop-blur-md p-3.5 rounded-[20px] shadow-lg border border-[#E5E5E7] z-30 max-w-[200px] hover:translate-y-[-4px] transition-transform duration-300">
             <div className="flex items-center space-x-2.5">
               <div className="bg-[#FAF9F5] p-1.5 rounded-full border border-black/10">
-                <CheckCircle className="w-4 h-4 text-[#00C853]" />
+                <CheckCircle className="w-4 h-4 text-[#7B52EE]" />
               </div>
               <div>
                 <p className="font-serif text-[11px] font-black leading-tight text-[#111111]">Complimentary Breakfast</p>
@@ -240,7 +240,7 @@ export default function Hero({ onStartPlanner, onExploreRooms }: HeroProps) {
 
           {/* Floating Badge: Watchtower Column height indicator */}
           <div className="gallery-item absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-white px-4 py-2.5 rounded-full shadow-lg border border-white/20 z-40 flex items-center space-x-2 uppercase font-mono text-[8px] tracking-[0.2em]">
-            <Compass className="w-3.5 h-3.5 text-[#00C853]" />
+            <Compass className="w-3.5 h-3.5 text-[#7B52EE]" />
             <span>ROOFTOP WATCHTOWER VIEW</span>
           </div>
 
@@ -255,7 +255,7 @@ export default function Hero({ onStartPlanner, onExploreRooms }: HeroProps) {
             {marqueePartners.map((partner, idx) => (
               <span
                 key={`p1-${idx}`}
-                className="font-serif font-black tracking-[0.2em] text-[10.5px] text-[#5F5E6B]/50 hover:text-[#00C853] transition-colors"
+                className="font-serif font-black tracking-[0.2em] text-[10.5px] text-[#5F5E6B]/50 hover:text-[#7B52EE] transition-colors"
               >
                 {partner}
               </span>
@@ -265,7 +265,7 @@ export default function Hero({ onStartPlanner, onExploreRooms }: HeroProps) {
             {marqueePartners.map((partner, idx) => (
               <span
                 key={`p2-${idx}`}
-                className="font-serif font-black tracking-[0.2em] text-[10.5px] text-[#5F5E6B]/50 hover:text-[#00C853] transition-colors"
+                className="font-serif font-black tracking-[0.2em] text-[10.5px] text-[#5F5E6B]/50 hover:text-[#7B52EE] transition-colors"
                >
                 {partner}
               </span>
